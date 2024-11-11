@@ -4,7 +4,7 @@ interface ILinkProps {
   name?: string
 }
 
-const props = withDefaults(defineProps<ILinkProps>(), {
+withDefaults(defineProps<ILinkProps>(), {
     route: '/',
     name: 'google.com'
  })
