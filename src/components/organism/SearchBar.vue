@@ -35,22 +35,40 @@
 
 // #region Watchers
 // #endregion
-import Logo from "../atoms/images/Logo.vue";
-import Links from "../molecules/Links.vue";
 </script>
 
 <template>
-  <div :class="$style.Header">
-      <Logo/>
-      <Links/>
+  <div :class="$style.searchBar">
+    <div :class="$style.dropdown">
+      Основные категории
+    </div>
+
+    <div>
+      <input type="text" :class="$style.search" placeholder="Поиск по каталогу">
+    </div>
   </div>
 </template>
 
 <style module lang="scss">
-.Header {
-  height: 8rem;
+.searchBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 6rem;
+  height: 3.6rem;
+  background-color: var(--black-gray);
+}
+
+.search {
+    padding: 0.6rem;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    border-radius: 2.4rem;
+}
+
+.dropdown {
+  color: var(--white);
+  font-size: 2.4rem;
 }
 </style>

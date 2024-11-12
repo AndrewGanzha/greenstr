@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import Header from "./components/organism/Header.vue";
+import SearchBar from "./components/organism/SearchBar.vue";
 </script>
 
 <template>
   <div class="container">
     <Header />
   </div>
+
+  <SearchBar />
 
     <main class="main">
       <img src="./assets/img/rectangle.svg" alt="rectangle" class="upRectangle"/>
@@ -43,7 +46,7 @@ import Header from "./components/organism/Header.vue";
 
 .content {
   padding-top: 3rem;
-  height: 100vh;
+  height: calc(100vh - 14.6rem);
   margin: 0 auto;
 }
 </style>

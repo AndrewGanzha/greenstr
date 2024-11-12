@@ -48,6 +48,16 @@ import {contactsData} from "../../assets/data/contacts.ts";
 
         <span>{{ contact.subtitle }}</span>
       </div>
+
+      <div :class="$style.icons">
+        <a :class="$style.icon" href="https://wa.me/79036557771" target="_blank">
+          <img src="../../assets/img/icons/whatsapp.svg" alt="whatsapp"/>
+        </a>
+
+        <a :class="$style.icon" href="mailto:ryzhikova.a@grinstr.ru" target="_blank">
+          <img src="../../assets/img/icons/email.svg" alt="email" @click="" >
+        </a>
+      </div>
   </div>
 
   <img :class="$style.map" src="../../assets/img/map.png" alt="map"/>
@@ -83,5 +93,16 @@ import {contactsData} from "../../assets/data/contacts.ts";
 
 .title {
   font-weight: 500;
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+
+  .icon {
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+  }
 }
 </style>
