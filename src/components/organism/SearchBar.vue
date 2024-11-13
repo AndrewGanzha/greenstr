@@ -42,10 +42,6 @@
     <div :class="$style.dropdown">
       Основные категории
     </div>
-
-    <div>
-      <input type="text" :class="$style.search" placeholder="Поиск по каталогу">
-    </div>
   </div>
 </template>
 

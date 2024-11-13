@@ -49,4 +49,10 @@ import SearchBar from "./components/organism/SearchBar.vue";
   height: calc(100vh - 14.6rem);
   margin: 0 auto;
 }
+
+@media (max-width: 1280px) {
+  .bottomRectangle, .upRectangle {
+    display: none;
+  }
+}
 </style>

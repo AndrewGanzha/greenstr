@@ -38,13 +38,18 @@
 </script>
 
 <template>
-  <div :class="$style.Catalog">
-
+  <div :class="$style.TextBlock">
+    <slot/>
   </div>
 </template>
 
 <style module lang="scss">
-.Catalog {
-  //
+.TextBlock {
+  border-radius: 1.2rem;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: 200;
+  color: var(--white);
+  background-color: var(--black-gray);
 }
 </style>
