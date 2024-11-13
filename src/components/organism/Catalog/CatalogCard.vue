@@ -39,12 +39,10 @@ const imgPath = ref<string>('');
 onMounted(() => {
   const images = import.meta.glob('../../../assets/img/reductors/*/preview.png');
 
-  // Формируем ключ для извлечения нужной картинки
   const imgKey = `../../../assets/img/reductors/${props.type}/preview.png`;
 
-  // Проверяем, существует ли этот ключ, и если да, загружаем картинку
   if (images[imgKey]) {
-    images[imgKey]().then((module) => {
+    images[imgKey]().then((module: any) => {
       imgPath.value = module.default;
     });
   }
