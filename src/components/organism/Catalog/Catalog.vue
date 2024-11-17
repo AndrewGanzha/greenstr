@@ -8,6 +8,7 @@
 import CatalogCard from "./CatalogCard.vue";
 import {catalogData} from "../../../assets/data/catalogList.ts";
 import TextBlock from "../../atoms/text/TextBlock.vue";
+import router from "../../../config/router.ts";
 // Types  
 // Utils  
 // Vue  
@@ -43,7 +44,13 @@ const text = 'Редукторы и мотор-редукторы являютс
 
 <template>
   <div :class="$style.catalog">
-      <CatalogCard :class="$style.catalogCard" v-for="reductor in catalogData" :title="reductor.title" :type="reductor.type"/>
+      <CatalogCard
+          :class="$style.catalogCard"
+          v-for="reductor in catalogData"
+          :title="reductor.title"
+          :type="reductor.type"
+          @click="router.push({name: 'reductor', params: { type: reductor.type }})"
+      />
   </div>
 
   <TextBlock>

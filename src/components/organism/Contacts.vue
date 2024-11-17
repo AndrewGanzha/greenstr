@@ -77,8 +77,9 @@ import {contactsData} from "../../assets/data/contacts.ts";
 }
 
 .map {
+  display: none;
   width: 100vw;
-  height: auto;
+  max-height: 40rem;
   position: absolute;
   left: 0;
   z-index: 2;
