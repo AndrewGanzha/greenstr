@@ -4,9 +4,7 @@ import SearchBar from "./components/organism/SearchBar.vue";
 </script>
 
 <template>
-  <div class="container">
-    <Header />
-  </div>
+  <Header />
 
   <SearchBar />
 
@@ -41,7 +39,7 @@ import SearchBar from "./components/organism/SearchBar.vue";
 
 .container {
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1000px;
 }
 
 .content {
