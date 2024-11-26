@@ -94,7 +94,48 @@ onMounted(() => {
       </div>
     </div>
 
-      <TextBlock v-html="reductorType[activeCategory]" />
+      <div v-if="activeCategory === 'description'">
+        <TextBlock v-html="reductorType.description" />
+      </div>
+
+      <div v-if="activeCategory === 'about'">
+        <TextBlock>
+          <h2 :class="$style.subtitle">Варианты исполнения</h2>
+
+          <ul :class="$style.list">
+            <li v-for="reductor in reductorType.performanceOptions" :class="$style.performanceOptionsItem">
+              {{ reductor }}
+            </li>
+          </ul>
+
+          <h2 :class="$style.subtitle">Схема типового обозначения</h2>
+
+          <ul :class="$style.list">
+            <li v-for="reductor in reductorType.typeDesignation" :class="$style.performanceOptionsItem">
+              {{ reductor }}
+            </li>
+          </ul>
+
+          <div v-for="(table, index) in reductorType.typeDesignationTables" :key="`table-${index}`">
+            <table>
+              <thead>
+              <tr>
+                <th v-for="(item, headerIndex) in Object.keys(table[0])" :key="`header-${headerIndex}`">
+                  {{ item }}
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr v-for="(row, rowIndex) in table" :key="`row-${rowIndex}`">
+                <td v-for="(cell, cellIndex) in row" :key="`cell-${cellIndex}`">
+                  {{ cell }}
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </TextBlock>
+      </div>
   </div>
 </template>
 
@@ -128,5 +169,23 @@ onMounted(() => {
 
 .activeLink {
   border-bottom: 1px solid var(--black-gray);
+}
+
+.subtitle {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 300;
+  font-size: 2.4rem;
+  border-bottom: 1px solid var(--white);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.performanceOptionsItem {
+  flex: 1 1 50%;
 }
 </style>
