@@ -116,23 +116,25 @@ onMounted(() => {
             </li>
           </ul>
 
-          <div v-for="(table, index) in reductorType.typeDesignationTables" :key="`table-${index}`">
-            <table>
-              <thead>
-              <tr>
-                <th v-for="(item, headerIndex) in Object.keys(table[0])" :key="`header-${headerIndex}`">
-                  {{ item }}
-                </th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr v-for="(row, rowIndex) in table" :key="`row-${rowIndex}`">
-                <td v-for="(cell, cellIndex) in row" :key="`cell-${cellIndex}`">
-                  {{ cell }}
-                </td>
-              </tr>
-              </tbody>
-            </table>
+          <div v-if="reductorType.typeDesignationTables">
+            <div v-for="(table, index) in reductorType.typeDesignationTables" :key="`table-${index}`">
+              <table :class="$style.table">
+                <thead>
+                <tr>
+                  <th v-for="(_, headerIndex) in table" :key="`header-${headerIndex}`">
+                    {{ headerIndex }}
+                  </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td v-for="(item, headerIndex) in table" :key="`header-${headerIndex}`">
+                    {{ item }}
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </TextBlock>
       </div>
@@ -187,5 +189,27 @@ onMounted(() => {
 
 .performanceOptionsItem {
   flex: 1 1 50%;
+}
+
+.table {
+  border: 1px solid var(--white);
+  background-color: var(--dark-gray);
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: center;
+
+  th {
+    border-bottom: 1px solid var(--white);
+
+    &:not(:last-child) {
+      border-right: 1px solid var(--white);
+    }
+  }
+
+  td {
+    &:not(:last-child) {
+      border-right: 1px solid var(--white);
+    }
+  }
 }
 </style>
