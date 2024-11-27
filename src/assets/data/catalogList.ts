@@ -14,6 +14,10 @@ export const catalogData = [
     {
         type: 'gf',
         title: 'GF - Плоскоцилиндрический',
+    },
+    {
+        type: 'mrv',
+        title: 'MRV - Червячные мотор-редукторы',
     }
 ]
 

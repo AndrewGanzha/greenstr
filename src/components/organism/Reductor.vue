@@ -100,40 +100,69 @@ onMounted(() => {
 
       <div v-if="activeCategory === 'about'">
         <TextBlock>
-          <h2 :class="$style.subtitle">Варианты исполнения</h2>
+          <div v-if="reductorType.performanceOptions">
+            <h2 :class="$style.subtitle">Варианты исполнения</h2>
 
-          <ul :class="$style.list">
-            <li v-for="reductor in reductorType.performanceOptions" :class="$style.performanceOptionsItem">
-              {{ reductor }}
-            </li>
-          </ul>
+            <ul :class="$style.list">
+              <li v-for="reductor in reductorType.performanceOptions" :class="$style.performanceOptionsItem">
+                {{ reductor }}
+              </li>
+            </ul>
+          </div>
 
-          <h2 :class="$style.subtitle">Схема типового обозначения</h2>
+          <div v-if="reductorType.typeDesignation">
+            <h2 :class="$style.subtitle">Схема типового обозначения</h2>
 
-          <ul :class="$style.list">
-            <li v-for="reductor in reductorType.typeDesignation" :class="$style.performanceOptionsItem">
-              {{ reductor }}
-            </li>
-          </ul>
+            <ul :class="$style.list">
+              <li v-for="reductor in reductorType.typeDesignation" :class="$style.performanceOptionsItem">
+                {{ reductor }}
+              </li>
+            </ul>
 
-          <div v-if="reductorType.typeDesignationTables">
-            <div v-for="(table, index) in reductorType.typeDesignationTables" :key="`table-${index}`">
-              <table :class="$style.table">
-                <thead>
-                <tr>
-                  <th v-for="(_, headerIndex) in table" :key="`header-${headerIndex}`">
-                    {{ headerIndex }}
-                  </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td v-for="(item, headerIndex) in table" :key="`header-${headerIndex}`">
-                    {{ item }}
-                  </td>
-                </tr>
-                </tbody>
-              </table>
+            <div v-if="reductorType.typeDesignationTables">
+              <div v-for="(table, index) in reductorType.typeDesignationTables" :key="`table-${index}`">
+                <table :class="$style.table">
+                  <thead>
+                  <tr>
+                    <th v-for="(_, headerIndex) in table" :key="`header-${headerIndex}`">
+                      {{ headerIndex }}
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td v-for="(item, headerIndex) in table" :key="`header-${headerIndex}`">
+                      {{ item }}
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="reductorType.maxTorque">
+            <h2 :class="$style.subtitle">Максимальный крутящий момент</h2>
+
+            <div v-if="reductorType.maxTorque">
+              <div v-for="(table, index) in reductorType.maxTorque" :key="`table-${index}`">
+                <table :class="$style.table">
+                  <thead>
+                  <tr>
+                    <th v-for="(_, headerIndex) in table" :key="`header-${headerIndex}`">
+                      {{ headerIndex }}
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td v-for="(item, headerIndex) in table" :key="`header-${headerIndex}`">
+                      {{ item }}
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </TextBlock>
@@ -192,6 +221,8 @@ onMounted(() => {
 }
 
 .table {
+  margin: 2rem 0;
+  width: 100%;
   border: 1px solid var(--white);
   background-color: var(--dark-gray);
   font-size: 1.6rem;
@@ -207,6 +238,8 @@ onMounted(() => {
   }
 
   td {
+    width: 14rem;
+
     &:not(:last-child) {
       border-right: 1px solid var(--white);
     }
