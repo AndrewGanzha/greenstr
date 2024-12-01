@@ -92,6 +92,14 @@ onMounted(() => {
           {{ category.title }}
         </p>
       </div>
+
+      <div v-if="reductorType.performanceParameters">
+          <ul :class="$style.description">
+            <li v-for="item in reductorType.performanceParameters">
+                {{ item }}
+            </li>
+          </ul>
+      </div>
     </div>
 
       <div v-if="activeCategory === 'description'">
