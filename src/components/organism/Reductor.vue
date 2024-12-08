@@ -6,6 +6,7 @@ import {reductorsData} from "../../assets/data/reductors.ts";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import TextBlock from "../atoms/text/TextBlock.vue";
+import ReductorMountingPosition from "../molecules/ReductorMountingPosition.vue";
 
 // #region Imports  
 // Types  
@@ -172,6 +173,10 @@ onMounted(() => {
                 </table>
               </div>
             </div>
+          </div>
+
+          <div v-if="reductorType.mountingPosition">
+            <ReductorMountingPosition :mountings="reductorType.mountingPosition"/>
           </div>
         </TextBlock>
       </div>
