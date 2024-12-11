@@ -50,6 +50,7 @@
 
 <style module>
   .logo {
+    padding-left: .8rem;
     width: 20.4rem;
     height: 7.8rem;
   }

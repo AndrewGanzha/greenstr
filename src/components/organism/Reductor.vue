@@ -3,7 +3,7 @@
  * Ссылка на макет - https://www.figma.com/design/hash
  */
 import {reductorsData} from "../../assets/data/reductors.ts";
-import {onMounted, ref} from "vue";
+import {onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
 import TextBlock from "../atoms/text/TextBlock.vue";
 import ReductorMountingPosition from "../molecules/ReductorMountingPosition.vue";
@@ -75,6 +75,25 @@ onMounted(() => {
 // #endregion 
 
 // #region Watchers
+watch(
+    () => $route.params.type,
+    (newParam) => {
+      if (newParam) {
+        reductorType.value = reductorsData.find(item => item.type === newParam)
+      }
+
+      const images = import.meta.glob('../../assets/img/reductors/*/preview.png');
+
+      const imgKey = `../../assets/img/reductors/${$route.params.type}/preview.png`;
+
+      if (images[imgKey]) {
+        images[imgKey]().then((module: any) => {
+          imgPath.value = module.default;
+        });
+      }
+    },
+    { immediate: true } // Этот параметр заставляет наблюдатель запускаться сразу при инициализации, если данные уже есть
+);
 // #endregion
 </script>
 
@@ -86,12 +105,19 @@ onMounted(() => {
       <img :src="imgPath" :class="$style.img"/>
 
       <div>
-        <p v-for="category in dataCategories"
-           :key="category.value"
-           @click="activeCategory = category.value"
-           :class="[$style.description, category.value === activeCategory ? $style.activeLink : '']">
-          {{ category.title }}
-        </p>
+        <div>
+          <p v-for="category in dataCategories"
+             :key="category.value"
+             @click="activeCategory = category.value"
+             :class="[$style.description, category.value === activeCategory ? $style.activeLink : '']">
+            {{ category.title }}
+          </p>
+        </div>
+        
+        <div :class="$style.buttons">
+          <button :class="$style.button"><a href="https://wa.me/79036557771" target="_blank">Связаться по Whats'app</a></button>
+          <button :class="$style.button"><a href="mailto:ryzhikova.a@grinstr.ru" target="_blank">Написать на e-mail</a></button>          
+        </div>
       </div>
 
       <div v-if="reductorType.performanceParameters">
@@ -256,6 +282,25 @@ onMounted(() => {
     &:not(:last-child) {
       border-right: 1px solid var(--white);
     }
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.button {
+  background: none;
+  border: 1px solid var(--black-gray);
+  padding: .6rem;
+  border-radius: 4rem;
+  margin-bottom: 2rem;
+
+  a {
+    color: var(--black-gray);
+    text-decoration: none;
   }
 }
 </style>

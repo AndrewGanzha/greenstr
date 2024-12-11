@@ -407,7 +407,7 @@ export const reductorsData = [
             "XLED — двухступенчатый редуктор с креплением на фланце и двигателем."
         ],
         mountingPosition: [
-            {image: ['https://s151klg.storage.yandex.net/rdisk/4f4748eefee19d37f81ce6441e301d61d9d2b7aebb83afdba823beac12b45118/6755e88b/lmBSwPRMoDeNNrsCYEMYGPLheFoq0tMnmEPNfJR3_A8DyXwMifhUT1vXHwtAcPjzm-gHfEQZHKUuq-rwBB3kBg==?uid=1582239682&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=226432&hid=98f40915042572ec5db3bb0e31b097d1&media_type=image&tknv=v2&etag=1e5cc3f9cc0a874cf99ca54d388181db&ts=628c69b92f8c0&s=9394762dc488eb88dc442969495e95cc6a12a5436275fc76884fac08ead98514&pb=U2FsdGVkX186dOytgBparzuPVhjre6i3n_wUP2em3wSIwXWyWaXeBcSYJtfsy86oGZQokM0iF8h-LVXNCv-LXHZ9je-K1xo2_QZS8_N8LJk']},
+            {image: ['public/reductors/bw/preview.png']},
             {image: ['https://s482vla.storage.yandex.net/rdisk/84a2b584b806a7d967b9151674de5dd6a7ad6ebac87302a1156abbf036acb822/6755e88e/lmBSwPRMoDeNNrsCYEMYGLunYNKwBiitxtxD99Q8aOgasZ2LYM7tRN8Son7-AAz2fI1PM7UgBrRZHZJAnKyTSg==?uid=1582239682&filename=2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=360948&hid=e180cbf56cffad368c48fc0a554e13da&media_type=image&tknv=v2&etag=176c987e3a8aea9245ad948686696780&ts=628c69bc0bf80&s=eb0165b7c8dcd2d35fa7fd9cf8e052289925eae0dbc2d8e12edb1cfa3bf65c15&pb=U2FsdGVkX1_yLnDw7DQ3tpHkxnl1uN5HdrL8O1DfP4D52B_36Xxss58zBxl0-SYHUXsZEutmya7w6mmE-DLlw6LSQ6LWZJ-ND8vJV5a6WwQ']},
         ]
     },

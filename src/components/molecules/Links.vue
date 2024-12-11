@@ -18,7 +18,8 @@
 // #region Props  
 // #endregion  
 
-// #region Emits  
+// #region Emits
+const emits = defineEmits(['openMenu'])
 // #endregion  
 
 // #region Data  
@@ -41,7 +42,7 @@ import Link from "../atoms/text/Link.vue";
 
 <template>
   <div :class="$style.Links">
-    <Link v-for="link in headerLinks" :name="link.name" :route="link.route"/>
+    <Link v-for="link in headerLinks" :name="link.name" :route="link.route" @click="link.name === 'Каталог' ? emits('openMenu') : undefined"/>
   </div>
 </template>
 
@@ -49,5 +50,7 @@ import Link from "../atoms/text/Link.vue";
 .Links {
   display: flex;
   gap: 6rem;
+  padding-right: 11.2rem;
+  height: fit-content;
 }
 </style>
