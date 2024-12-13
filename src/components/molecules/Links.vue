@@ -42,7 +42,7 @@ import Link from "../atoms/text/Link.vue";
 
 <template>
   <div :class="$style.Links">
-    <Link v-for="link in headerLinks" :name="link.name" :route="link.route" @click="link.name === 'Каталог' ? emits('openMenu') : undefined"/>
+    <Link v-for="link in headerLinks" :name="link.name" :route="link.name === 'Каталог' ? link.route : undefined" @click="link.name === 'Каталог' ? emits('openMenu') : undefined"/>
   </div>
 </template>
 

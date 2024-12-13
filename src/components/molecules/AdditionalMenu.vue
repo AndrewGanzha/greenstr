@@ -3,6 +3,8 @@
  * Ссылка на макет - https://www.figma.com/design/hash
  */
 import {useRouter} from "vue-router";
+import {ref} from "vue";
+import {catalogData} from "../../assets/data/catalogList.ts";
 
 // #region Imports  
 // Types  
@@ -22,17 +24,24 @@ import {useRouter} from "vue-router";
 // #endregion  
 
 // #region Data
+const modalReductors = ref<any>([]);
 const router = useRouter();
 // #endregion  
 
 // #region Methods
+function setModalReductors(reductors: string[]) {
+  modalReductors.value = catalogData.filter(item => reductors.includes(item.type));
+}
 
+function getImage(type: string)  {
+  return new URL(`../../assets/img/reductors/${type}/preview.png`, import.meta.url).href
+}
 // #endregion  
 
 // #region Computed  
 // #endregion  
 
-// #region Lifecycle  
+// #region Lifecycle
 // #endregion 
 
 // #region Watchers
@@ -45,8 +54,8 @@ const router = useRouter();
           <span @click="router.push({name: 'reductor', params: { type: 'gf' }})" :class="$style.title">Цилиндрические мотор-редукторы серии G</span>
           <span @click="router.push({name: 'reductor', params: { type: 'gr' }})" :class="$style.subtitle">GR - соосно-цилиндрические</span>
           <span :class="$style.subtitle">GS/NMRV - червячные</span>
-          <span :class="$style.subtitle">GK - цилиндро-конические</span>
-          <span :class="$style.subtitle">GF - плоскоцилиндрические</span>
+          <span @click="router.push({name: 'reductor', params: { type: 'gk' }})" :class="$style.subtitle">GK - цилиндро-конические</span>
+          <span @click="router.push({name: 'reductor', params: { type: 'gf' }})" :class="$style.subtitle">GF - плоскоцилиндрические</span>
       </div>
 
     <div :class="$style.column">
@@ -56,11 +65,19 @@ const router = useRouter();
       </div>
 
     <div :class="$style.column">
-          <span :class="$style.title">Навесные редукторы</span>
+          <span :class="$style.title" @click="setModalReductors(['smr', 'xg'])">Навесные редукторы</span>
           <span :class="$style.title">Насосы</span>
           <span :class="$style.title">Муфты</span>
           <span :class="$style.title">Запорная арматура</span>
     </div>
+  </div>
+
+  <div :class="$style.modal" v-if="modalReductors">
+      <div v-for="reductor in modalReductors">
+          <p>{{ reductor?.title }}</p>
+
+          <img :src="getImage(reductor.type)" />
+      </div>
   </div>
 </template>
 
