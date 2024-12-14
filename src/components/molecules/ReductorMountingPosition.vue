@@ -28,7 +28,10 @@ defineProps<IProps>();
 // #region Data  
 // #endregion  
 
-// #region Methods  
+// #region Methods
+function getImage(src: string)  {
+  return new URL(`${src}`, import.meta.url).href
+}
 // #endregion  
 
 // #region Computed  
@@ -48,7 +51,7 @@ defineProps<IProps>();
       <div :class="$style.image" v-for="(mount, idx) in mountings">
         <h2 :class="$style.subtitle">{{ idx === 0 ?  '' : mount.title}}</h2>
 
-        <img v-for="(img, idx) in mount.image" :src="img" alt="reductor" :key="`mount_${idx}`"/>
+        <img v-for="(img, idx) in mount.image" :src="getImage(img)" alt="reductor" :key="`mount_${idx}`"/>
       </div>
     </div>
 </template>

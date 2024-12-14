@@ -37,9 +37,9 @@ const imgPath = ref<string>('');
 
 // #region Lifecycle
 onMounted(() => {
-  const images = import.meta.glob('../../../assets/img/reductors/*/preview.png');
+  const images = import.meta.glob('../../../assets/img/reductors/*/preview.svg');
 
-  const imgKey = `../../../assets/img/reductors/${props.type}/preview.png`;
+  const imgKey = `../../../assets/img/reductors/${props.type}/preview.svg`;
 
   if (images[imgKey]) {
     images[imgKey]().then((module: any) => {

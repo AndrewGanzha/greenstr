@@ -62,9 +62,9 @@ const reductorType = ref<any>(reductorsData.find(item => item.type === $route.pa
 
 // #region Lifecycle
 onMounted(() => {
-  const images = import.meta.glob('../../assets/img/reductors/*/preview.png');
+  const images = import.meta.glob('../../assets/img/reductors/*/preview.svg');
 
-  const imgKey = `../../assets/img/reductors/${$route.params.type}/preview.png`;
+  const imgKey = `../../assets/img/reductors/${$route.params.type}/preview.svg`;
 
   if (images[imgKey]) {
     images[imgKey]().then((module: any) => {
@@ -82,9 +82,9 @@ watch(
         reductorType.value = reductorsData.find(item => item.type === newParam)
       }
 
-      const images = import.meta.glob('../../assets/img/reductors/*/preview.png');
+      const images = import.meta.glob('../../assets/img/reductors/*/preview.svg');
 
-      const imgKey = `../../assets/img/reductors/${$route.params.type}/preview.png`;
+      const imgKey = `../../assets/img/reductors/${$route.params.type}/preview.svg`;
 
       if (images[imgKey]) {
         images[imgKey]().then((module: any) => {

@@ -52,8 +52,8 @@ export const reductorsData = [
             },
         },
         mountingPosition: [
-            {image: ['https://s53klg.storage.yandex.net/rdisk/fff380619403b3e0bcf58cbcdb3ae9e63f8368faa5fc11f1bf897098025ca156/6755d1a7/lmBSwPRMoDeNNrsCYEMYGAuTWKYuFfwpPO9u9e7bZcjqzfqhx6JqX5otaj4kRVWJmet2jx0HtJXGJLIVaFFdkg==?uid=1582239682&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=47070&hid=a69b1302ce3f888e2eb6c3fa82849a50&media_type=image&tknv=v2&etag=5941cbfcdfb379edfbd88f65839f1509&ts=628c53e4a77c0&s=cd6360e259bc72aa6f7ccbcd76585050abad8df8351faf4f68ef1ae261d0560e&pb=U2FsdGVkX18tRrduE9P2XGMWJq_omgj0lVxALAiu6ECTiobljM5lEkC0fpALYi_cYJTK6dfc5sTa5rS5Uufxn0LemuylYskGB1k-_WGU2Hc']},
-            {image: ['https://s482vla.storage.yandex.net/rdisk/19494330696b78a4eadb039357521ddb2360def97d4a064a942438952644430d/6755d321/lmBSwPRMoDeNNrsCYEMYGF2IBM2iB_zrDp3SbQxiLz7Y-BmGUZsS-FZrtPwDfhz3FVPKw4ikOduWgUK4T_k8Fg==?uid=1582239682&filename=2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=222906&hid=a3f42c46992e307ce8784abfbb1c14fe&media_type=image&tknv=v2&etag=0c68af797665cada9f8a4a795ca2c59f&ts=628c554d24a40&s=ad3c05ce63af23185fc52afab1f1f02ede01a8dd189725f237e7d78323fe716d&pb=U2FsdGVkX18fiEhEL_McomYAEFpZ1ugVMMPO2Y5tnVsfmUvcS3WkdqqbLdYimsoDNvE7g2qS6M5wJfll0rPaxqCqUgjiPb5ugIiVAiXgyLU']},
+            {image: ['../../assets/img/reductors/gr/1.svg']},
+            {image: ['../../assets/img/reductors/gr/2.svg']},
         ]
     },
     {
@@ -108,8 +108,8 @@ export const reductorsData = [
             },
         },
         mountingPosition: [
-            {image: ['https://s1129sas.storage.yandex.net/rdisk/03cd410253be2bba280e1c1b460e9c7d067ea80e708d015986456e58f53a953d/6755e39b/lmBSwPRMoDeNNrsCYEMYGNYEzfK9xN0eKJv2IsknIp3AqT8jmTTa-VwhSGFJUXf4n1qeTKA153O7jg4i4b8ujA==?uid=1582239682&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=53141&hid=91d36fb1f09b49fcf1e6cc0738c9cada&media_type=image&tknv=v2&etag=6bb50e2ad94d0e8dd749a400b3e8e087&ts=628c6503bdcc0&s=dc576adba05152240b18ac2328d6cb3a93482117269f58056bf1bae7fb5d0a9f&pb=U2FsdGVkX18b0EJdBYVxs4fZEqCMITMIkHXJes7ktIs0_JvSJ-EsZO9ryi3Tr-845atMhORGbev-ze56IL5FXVgMB-s-f2rR9Dlw9sL6e5g']},
-            {image: ['https://s87klg.storage.yandex.net/rdisk/c013dca1ab2827ba57bd0036e6cb9c6a6c42fd3c4e6491f70ff8771a0a6611a9/6755e3a5/lmBSwPRMoDeNNrsCYEMYGGh1IXwx5r7CzaLBWtXSkO9F0S-9j3nKEwKN9JXG4iMl_OECFGpVb-fj7p80t0Xm4w==?uid=1582239682&filename=2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=155085&hid=ab84c297e8a3fa6a1e4f6fd9dcb98247&media_type=image&tknv=v2&etag=51ab89fa87b03e30c7c36dc794dd668b&ts=628c650d47340&s=ca49328ca47cc7d47a9660fd5888adac405e80d9fb66becd716c6ef157141863&pb=U2FsdGVkX18AGhfWG0JmsXmqtT-ROGq3rM6h4WFAOnx4ZWLguckQRmN0WD-nY-eKc_LmaJo0XLQBpD0-83SGqAFqK4tWy7TrcvTAorD27b8']},
+            {image: ['../../assets/img/reductors/gs/1.svg']},
+            {image: ['../../assets/img/reductors/gs/2.svg']},
         ]
     },
     {
@@ -169,8 +169,8 @@ export const reductorsData = [
             },
         },
         mountingPosition: [
-            {image: ['https://s644vla.storage.yandex.net/rdisk/5341b528ad6fd642be0dbb8d8731cd59dede6d80b68f72e2a6772f9396e9b89c/6755e694/lmBSwPRMoDeNNrsCYEMYGM3FaBoMCnXhZ_TgNZOma9hyUcWOPwAwMJPnrGaCZDLyhrmb9ooukM2le6RofVxgqg==?uid=1582239682&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=69486&hid=46e8d534183df489d12546c2791db28a&media_type=image&tknv=v2&etag=ed1677136eaf3f36ef967a86ddb3e8e0&ts=628c67d97cd00&s=159ecc40ad9a894e8f6ed9f99f2ed0779f2db5c293c3fbb10aa3ac0d5fac6c90&pb=U2FsdGVkX1-b__XzbR_vfNUWPJJLkyIIHbDTykV7GzwFjeCiQdCaGfcDCOcNY_zWkDj2PDv_-2hCA0ROOhcNk_xBDCGKFq9pnfEa2cAfR6g']},
-            {image: ['https://s679sas.storage.yandex.net/rdisk/1917e62541bd3c1b4c1df81cc5817a09d6a393a1e57509cb9d7759ca5eb547e6/6755e697/lmBSwPRMoDeNNrsCYEMYGNjZaLVIepptKLhEhyoCRVIZQv631pErBpaB7V4LoLqG_C99th6RYdiu7Hn4l7Sldw==?uid=1582239682&filename=2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=184142&hid=6b29f2663b537b1d84472817e2171865&media_type=image&tknv=v2&etag=895547460639db77e24f92fe717675fc&ts=628c67dc593c0&s=0fb122360b7329ed7bf8139ef0a8f50565a13bee5d02be1ff69b54ad67541af1&pb=U2FsdGVkX18T1nIXGfFwO7lsX8AW03AzwMd0uFMJ8A3MaJRcBkWg5pe2ArNzOb83DInDUbmyaDg5P0oSik8uCf-p2K-cnOg5JYPGF8XAhEA']},
+            {image: ['../../assets/img/reductors/gk/1.svg']},
+            {image: ['../../assets/img/reductors/gk/2.svg']},
         ]
     },
     {
@@ -230,8 +230,8 @@ export const reductorsData = [
             },
         },
         mountingPosition: [
-            {image: ['https://s644vla.storage.yandex.net/rdisk/5341b528ad6fd642be0dbb8d8731cd59dede6d80b68f72e2a6772f9396e9b89c/6755e694/lmBSwPRMoDeNNrsCYEMYGM3FaBoMCnXhZ_TgNZOma9hyUcWOPwAwMJPnrGaCZDLyhrmb9ooukM2le6RofVxgqg==?uid=1582239682&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=69486&hid=46e8d534183df489d12546c2791db28a&media_type=image&tknv=v2&etag=ed1677136eaf3f36ef967a86ddb3e8e0&ts=628c67d97cd00&s=159ecc40ad9a894e8f6ed9f99f2ed0779f2db5c293c3fbb10aa3ac0d5fac6c90&pb=U2FsdGVkX1-b__XzbR_vfNUWPJJLkyIIHbDTykV7GzwFjeCiQdCaGfcDCOcNY_zWkDj2PDv_-2hCA0ROOhcNk_xBDCGKFq9pnfEa2cAfR6g']},
-            {image: ['https://s679sas.storage.yandex.net/rdisk/1917e62541bd3c1b4c1df81cc5817a09d6a393a1e57509cb9d7759ca5eb547e6/6755e697/lmBSwPRMoDeNNrsCYEMYGNjZaLVIepptKLhEhyoCRVIZQv631pErBpaB7V4LoLqG_C99th6RYdiu7Hn4l7Sldw==?uid=1582239682&filename=2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=184142&hid=6b29f2663b537b1d84472817e2171865&media_type=image&tknv=v2&etag=895547460639db77e24f92fe717675fc&ts=628c67dc593c0&s=0fb122360b7329ed7bf8139ef0a8f50565a13bee5d02be1ff69b54ad67541af1&pb=U2FsdGVkX18T1nIXGfFwO7lsX8AW03AzwMd0uFMJ8A3MaJRcBkWg5pe2ArNzOb83DInDUbmyaDg5P0oSik8uCf-p2K-cnOg5JYPGF8XAhEA']},
+            {image: ['../../assets/img/reductors/gf/1.svg']},
+            {image: ['../../assets/img/reductors/gf/2.svg']},
         ]
     },
     {
@@ -304,8 +304,8 @@ export const reductorsData = [
             },
         },
         mountingPosition: [
-            {title: 'Монтажное положение MRV', image: ['https://s158klg.storage.yandex.net/rdisk/b6d4684347406dd0d539eb9ed83389b4758796610ce745f6f053842593d80fc8/6755e415/lmBSwPRMoDeNNrsCYEMYGFfTngbmXxgdwh5_W7wTPyNGj7FBGGqTBZwLd2kOXxENrIFX1csRtifW_a-6ngyKbA==?uid=1582239682&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=74001&hid=e755009ddc9a21dc0ecd797f03f6ed16&media_type=image&tknv=v2&etag=b6989f850e9d2b1a6c525c1434cf2e61&ts=628c657816f40&s=784f4c08d61250dda0ffaef93a7025daf3dce0fe01c2452d2e1664808398e004&pb=U2FsdGVkX1-DNpGj3-33AufykQVYzs5vKkV50dz6IdqUeqziarjgpWitgc2Ck4uFvbHVzD38bKA_ro-7I1yHG_IW84aYJUSVVisIYTObfAA']},
-            {title: 'Монтажное положение DRV', image: ['https://s16klg.storage.yandex.net/rdisk/ba9913f59ccc078f786544bd55f81dff1fccaf40dc400c344db7c83a10848c29/6755e417/lmBSwPRMoDeNNrsCYEMYGLQ7q9yW-SmCct1d0gPpDeO2L4hWWgSgExvMhf1iR1R-iXr3towO9Eu-7I1Qs3Upig==?uid=1582239682&filename=2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=121966&hid=87e13d1a826c9b0fb7ff3734e02c6d2c&media_type=image&tknv=v2&etag=1823334284b18bea8713f47128ca2959&ts=628c6579ff3c0&s=f17026cf7edc840b93da485851fc24c55b3062c4a49c7e6354c733873c51fa83&pb=U2FsdGVkX1_qnTwHdPGIVmK2rZrDq0717kATI8dSK2mVsWGNtX5nmGVpPZ2E6fdpJYKNHrc-ilQrwHbP561OtyOJ-ehtCAVDTuyXZLH_hhk']},
+            {image: ['../../assets/img/reductors/mrv/1.svg']},
+            {image: ['../../assets/img/reductors/mrv/2.svg']},
         ]
     },
     {
@@ -375,7 +375,7 @@ export const reductorsData = [
             },
         },
         mountingPosition: [
-            {image: ['https://s504vla.storage.yandex.net/rdisk/255b0ee0429a3a1ff064205ded6f959058513d16363049d2e81b1efb550fb76d/6755e82f/lmBSwPRMoDeNNrsCYEMYGGYUwmnB2d2iRFEN4mtu8x_r90PPGZ_sPrQDNRuhHSRj7IIVTEgslYVl2oW8swBKvw==?uid=1582239682&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=152893&hid=ddfd4f4e0d392d834d6762ac2ed72d60&media_type=image&tknv=v2&etag=a69fa2db9c2247dfe56e982738157b6c&ts=628c6961729c0&s=7dd860c294e1e37ed41bf9b6ba762ff52083d94735781098cf1bafdde15f93ca&pb=U2FsdGVkX199FqmocR49Jg5b2FLzFE5Mw0znTcVKFZepWIIjdQ87yE6y3bSOnaQHQtXrlkI7O7D-2-D34r0LzGVb4Hp3d7yqlEkFluO6vow']},
+            {image: ['../../assets/img/reductors/hb/1.svg']},
         ]
     },
     {
@@ -407,8 +407,8 @@ export const reductorsData = [
             "XLED — двухступенчатый редуктор с креплением на фланце и двигателем."
         ],
         mountingPosition: [
-            {image: ['public/reductors/bw/preview.png']},
-            {image: ['https://s482vla.storage.yandex.net/rdisk/84a2b584b806a7d967b9151674de5dd6a7ad6ebac87302a1156abbf036acb822/6755e88e/lmBSwPRMoDeNNrsCYEMYGLunYNKwBiitxtxD99Q8aOgasZ2LYM7tRN8Son7-AAz2fI1PM7UgBrRZHZJAnKyTSg==?uid=1582239682&filename=2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1582239682&fsize=360948&hid=e180cbf56cffad368c48fc0a554e13da&media_type=image&tknv=v2&etag=176c987e3a8aea9245ad948686696780&ts=628c69bc0bf80&s=eb0165b7c8dcd2d35fa7fd9cf8e052289925eae0dbc2d8e12edb1cfa3bf65c15&pb=U2FsdGVkX1_yLnDw7DQ3tpHkxnl1uN5HdrL8O1DfP4D52B_36Xxss58zBxl0-SYHUXsZEutmya7w6mmE-DLlw6LSQ6LWZJ-ND8vJV5a6WwQ']},
+            {image: ['../../assets/img/reductors/bw/1.svg']},
+            {image: ['../../assets/img/reductors/bw/2.svg']},
         ]
     },
     {

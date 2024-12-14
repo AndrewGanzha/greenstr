@@ -34,7 +34,7 @@ function setModalReductors(reductors: string[]) {
 }
 
 function getImage(type: string)  {
-  return new URL(`../../assets/img/reductors/${type}/preview.png`, import.meta.url).href
+  return new URL(`../../assets/img/reductors/${type}/preview.svg`, import.meta.url).href
 }
 
 function goToReductor(type: string = '', hasCloseAction: boolean = false) {
