@@ -110,8 +110,8 @@ export const reductorsData = [
       },
     },
     mountingPosition: [
-      { image: ["../../assets/img/reductors/gs/1.svg"] },
-      { image: ["../../assets/img/reductors/gs/2.svg"] },
+      { image: ["/reductors/gs/1.svg"] },
+      { image: ["/reductors/gs/2.svg"] },
     ],
   },
   {
@@ -172,8 +172,8 @@ export const reductorsData = [
       },
     },
     mountingPosition: [
-      { image: ["../../assets/img/reductors/gk/1.svg"] },
-      { image: ["../../assets/img/reductors/gk/2.svg"] },
+      { image: ["/reductors/gk/1.svg"] },
+      { image: ["/reductors/gk/2.svg"] },
     ],
   },
   {
@@ -234,8 +234,8 @@ export const reductorsData = [
       },
     },
     mountingPosition: [
-      { image: ["../../assets/img/reductors/gf/1.svg"] },
-      { image: ["../../assets/img/reductors/gf/2.svg"] },
+      { image: ["/reductors/gf/1.svg"] },
+      { image: ["/reductors/gf/2.svg"] },
     ],
   },
   {
@@ -302,8 +302,8 @@ export const reductorsData = [
       },
     },
     mountingPosition: [
-      { image: ["../../assets/img/reductors/mrv/1.svg"] },
-      { image: ["../../assets/img/reductors/mrv/2.svg"] },
+      { image: ["/reductors/mrv/1.svg"] },
+      { image: ["/reductors/mrv/2.svg"] },
     ],
   },
   {
@@ -373,7 +373,7 @@ export const reductorsData = [
         "24": 725,
       },
     },
-    mountingPosition: [{ image: ["../../assets/img/reductors/hb/1.svg"] }],
+    mountingPosition: [{ image: ["/reductors/hb/1.svg"] }],
   },
   {
     type: "bw",
@@ -405,8 +405,8 @@ export const reductorsData = [
       "XLED — двухступенчатый редуктор с креплением на фланце и двигателем.",
     ],
     mountingPosition: [
-      { image: ["../../assets/img/reductors/bw/1.svg"] },
-      { image: ["../../assets/img/reductors/bw/2.svg"] },
+      { image: ["/reductors/bw/1.svg"] },
+      { image: ["/reductors/bw/2.svg"] },
     ],
   },
   {
@@ -448,8 +448,8 @@ export const reductorsData = [
       [["GX3K.."], "../../assets/img/reductors/gx/table-1-6.svg", ["560~4000"]],
     ],
     mountingPosition: [
-      { image: ["../../assets/img/reductors/bw/1.svg"] },
-      { image: ["../../assets/img/reductors/bw/2.svg"] },
+      { image: ["/reductors/bw/1.svg"] },
+      { image: ["/reductors/bw/2.svg"] },
     ],
   },
   {
