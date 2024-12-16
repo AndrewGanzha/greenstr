@@ -53,8 +53,8 @@ export const reductorsData = [
       },
     },
     mountingPosition: [
-      { image: ["reductors/gr/1.svg"] },
-      { image: ["../../assets/img/reductors/gr/2.svg"] },
+      { image: ["/reductors/gr/1.svg"] },
+      { image: ["/reductors/gr/2.svg"] },
     ],
   },
   {

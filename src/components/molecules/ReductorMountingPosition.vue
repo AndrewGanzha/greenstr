@@ -55,7 +55,7 @@ function getImage(src: string) {
 
       <img
         v-for="(img, idx) in mount.image"
-        :src="getImage(img)"
+        :src="img"
         alt="reductor"
         :key="`mount_${idx}`"
       />
