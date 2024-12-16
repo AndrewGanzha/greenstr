@@ -29,9 +29,6 @@ defineProps<IProps>();
 // #endregion
 
 // #region Methods
-function getImage(src: string) {
-  return new URL(`${src}`, import.meta.url).href;
-}
 // #endregion
 
 // #region Computed
