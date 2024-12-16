@@ -1,41 +1,42 @@
-<script setup lang="ts">/**
+<script setup lang="ts">
+/**
  * @desc Описание компонента
  * Ссылка на макет - https://www.figma.com/design/hash
  */
-import {ref} from "vue";
+import { ref } from "vue";
 
-// #region Imports  
-// Types  
-// Utils  
-// Vue  
-// Pinia  
-// Components  
-// #endregion  
+// #region Imports
+// Types
+// Utils
+// Vue
+// Pinia
+// Components
+// #endregion
 
-// #region Interfaces  
-// #endregion  
+// #region Interfaces
+// #endregion
 
-// #region Props  
-// #endregion  
+// #region Props
+// #endregion
 
-// #region Emits  
-// #endregion  
+// #region Emits
+// #endregion
 
 // #region Data
 const isMenuShow = ref<boolean>(false);
-// #endregion  
+// #endregion
 
 // #region Methods
 function openMenu() {
   isMenuShow.value = !isMenuShow.value;
 }
-// #endregion  
+// #endregion
 
-// #region Computed  
-// #endregion  
+// #region Computed
+// #endregion
 
-// #region Lifecycle  
-// #endregion 
+// #region Lifecycle
+// #endregion
 
 // #region Watchers
 // #endregion
@@ -46,12 +47,12 @@ import AdditionalMenu from "../molecules/AdditionalMenu.vue";
 
 <template>
   <div :class="$style.Header">
-      <div :class="$style.content">
-        <Logo/>
-        <Links @open-menu="openMenu" />
-      </div>
+    <div :class="$style.content">
+      <Logo />
+      <Links @open-menu="openMenu" />
+    </div>
 
-      <AdditionalMenu v-if="isMenuShow"/>
+    <AdditionalMenu v-if="isMenuShow" />
   </div>
 </template>
 

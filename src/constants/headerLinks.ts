@@ -1,31 +1,31 @@
 interface IHeaderRoute {
-    route: string;
-    name: string;
+  route: string;
+  name: string;
 }
 
 export enum ERoutes {
-    main = '/',
-    catalog = '/catalog',
-    delivery = '/delivery',
-    contact = '/contacts',
-    reductor = '/reductor',
+  main = "/",
+  catalog = "/catalog",
+  delivery = "/delivery",
+  contact = "/contacts",
+  reductor = "/reductor",
 }
 
 export const headerLinks: IHeaderRoute[] = [
-    {
-        route: ERoutes.main,
-        name: 'Главная'
-    },
-    {
-        route: ERoutes.catalog,
-        name: 'Каталог'
-    },
-    {
-        route: ERoutes.delivery,
-        name: 'Доставка'
-    },
-    {
-        route: ERoutes.contact,
-        name: 'Контакты'
-    }
-]
+  {
+    route: ERoutes.main,
+    name: "Главная",
+  },
+  {
+    route: ERoutes.catalog,
+    name: "Каталог",
+  },
+  {
+    route: ERoutes.delivery,
+    name: "Доставка",
+  },
+  {
+    route: ERoutes.contact,
+    name: "Контакты",
+  },
+];

@@ -8,15 +8,19 @@ import SearchBar from "./components/organism/SearchBar.vue";
 
   <SearchBar />
 
-    <main class="main">
-      <img src="./assets/img/rectangle.svg" alt="rectangle" class="upRectangle"/>
-      <div class="container">
-        <div class="content">
-          <router-view/>
-        </div>
+  <main class="main">
+    <img src="./assets/img/rectangle.svg" alt="rectangle" class="upRectangle" />
+    <div class="container">
+      <div class="content">
+        <router-view />
       </div>
-      <img src="./assets/img/rectangle.svg" alt="rectangle" class="bottomRectangle"/>
-    </main>
+    </div>
+    <img
+      src="./assets/img/rectangle.svg"
+      alt="rectangle"
+      class="bottomRectangle"
+    />
+  </main>
 </template>
 
 <style>
@@ -49,7 +53,8 @@ import SearchBar from "./components/organism/SearchBar.vue";
 }
 
 @media (max-width: 1280px) {
-  .bottomRectangle, .upRectangle {
+  .bottomRectangle,
+  .upRectangle {
     display: none;
   }
 }

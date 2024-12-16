@@ -1,43 +1,46 @@
-<script setup lang="ts">/**
+<script setup lang="ts">
+/**
  * @desc Описание компонента
  * Ссылка на макет - https://www.figma.com/design/hash
  */
-import {onMounted, ref} from "vue";
+import { onMounted, ref } from "vue";
 
 // #region Imports
-// Types  
-// Utils  
-// Vue  
-// Pinia  
-// Components  
-// #endregion  
+// Types
+// Utils
+// Vue
+// Pinia
+// Components
+// #endregion
 
-// #region Interfaces  
-// #endregion  
+// #region Interfaces
+// #endregion
 
 // #region Props
 const props = defineProps({
   title: String,
-  type: String
-})
-// #endregion  
+  type: String,
+});
+// #endregion
 
-// #region Emits  
-// #endregion  
+// #region Emits
+// #endregion
 
 // #region Data
-const imgPath = ref<string>('');
-// #endregion  
+const imgPath = ref<string>("");
+// #endregion
 
-// #region Methods  
-// #endregion  
+// #region Methods
+// #endregion
 
-// #region Computed  
-// #endregion  
+// #region Computed
+// #endregion
 
 // #region Lifecycle
 onMounted(() => {
-  const images = import.meta.glob('../../../assets/img/reductors/*/preview.svg');
+  const images = import.meta.glob(
+    "../../../assets/img/reductors/*/preview.svg",
+  );
 
   const imgKey = `../../../assets/img/reductors/${props.type}/preview.svg`;
 
@@ -46,8 +49,8 @@ onMounted(() => {
       imgPath.value = module.default;
     });
   }
-})
-// #endregion 
+});
+// #endregion
 
 // #region Watchers
 // #endregion
@@ -55,9 +58,9 @@ onMounted(() => {
 
 <template>
   <div :class="$style.catalogCard">
-      <img :src="imgPath" alt="reductor" :class="$style.catalogCardImg"/>
+    <img :src="imgPath" alt="reductor" :class="$style.catalogCardImg" />
 
-      <p :class="$style.catalogTitle">{{ title }}</p>
+    <p :class="$style.catalogTitle">{{ title }}</p>
   </div>
 </template>
 

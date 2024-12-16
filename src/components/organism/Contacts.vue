@@ -4,63 +4,67 @@
  * Ссылка на макет - https://www.figma.com/design/hash
  */
 
-// #region Imports  
-// Types  
-// Utils  
-// Vue  
-// Pinia  
-// Components  
-// #endregion  
+// #region Imports
+// Types
+// Utils
+// Vue
+// Pinia
+// Components
+// #endregion
 
-// #region Interfaces  
-// #endregion  
+// #region Interfaces
+// #endregion
 
-// #region Props  
-// #endregion  
+// #region Props
+// #endregion
 
-// #region Emits  
-// #endregion  
+// #region Emits
+// #endregion
 
-// #region Data  
-// #endregion  
+// #region Data
+// #endregion
 
-// #region Methods  
-// #endregion  
+// #region Methods
+// #endregion
 
-// #region Computed  
-// #endregion  
+// #region Computed
+// #endregion
 
-// #region Lifecycle  
-// #endregion 
+// #region Lifecycle
+// #endregion
 
 // #region Watchers
 // #endregion
 import Label from "../atoms/text/Label.vue";
-import {contactsData} from "../../assets/data/contacts.ts";
+import { contactsData } from "../../assets/data/contacts.ts";
 </script>
 
 <template>
   <div :class="$style.Contacts">
-      <Label>Контакты:</Label>
+    <Label>Контакты:</Label>
 
-      <div v-for="contact in contactsData" :class="$style.contact">
-        <span :class="$style.title">{{contact.title}}</span>
+    <div v-for="contact in contactsData" :class="$style.contact">
+      <span :class="$style.title">{{ contact.title }}</span>
 
-        <span>{{ contact.subtitle }}</span>
-      </div>
+      <span>{{ contact.subtitle }}</span>
+    </div>
 
-      <div :class="$style.icons">
-        <a :class="$style.icon" href="https://wa.me/79036557771" target="_blank">
-          <img src="../../assets/img/icons/whatsapp.svg" alt="whatsapp"/>
-        </a>
+    <div :class="$style.icons">
+      <a :class="$style.icon" href="https://wa.me/79036557771" target="_blank">
+        <img src="../../assets/img/icons/whatsapp.svg" alt="whatsapp" />
+      </a>
 
-        <a :class="$style.icon" href="mailto:ryzhikova.a@grinstr.ru" target="_blank">
-          <img src="../../assets/img/icons/email.svg" alt="email" @click="" >
-        </a>
-      </div>
+      <a
+        :class="$style.icon"
+        href="mailto:ryzhikova.a@grinstr.ru"
+        target="_blank"
+      >
+        <img src="../../assets/img/icons/email.svg" alt="email" @click="" />
+      </a>
+    </div>
   </div>
 
-  <img :class="$style.map" src="../../assets/img/map.png" alt="map"/>
+  <img :class="$style.map" src="../../assets/img/map.png" alt="map" />
 </template>
 
 <style module lang="scss">

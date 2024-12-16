@@ -1,49 +1,55 @@
-<script setup lang="ts">/**
+<script setup lang="ts">
+/**
  * @desc Описание компонента
  * Ссылка на макет - https://www.figma.com/design/hash
  */
-import {useRouter} from "vue-router";
-import {ref} from "vue";
-import {catalogData} from "../../assets/data/catalogList.ts";
+import { useRouter } from "vue-router";
+import { ref } from "vue";
+import { catalogData } from "../../assets/data/catalogList.ts";
 
-// #region Imports  
-// Types  
-// Utils  
-// Vue  
-// Pinia  
-// Components  
-// #endregion  
+// #region Imports
+// Types
+// Utils
+// Vue
+// Pinia
+// Components
+// #endregion
 
-// #region Interfaces  
-// #endregion  
+// #region Interfaces
+// #endregion
 
-// #region Props  
-// #endregion  
+// #region Props
+// #endregion
 
-// #region Emits  
-// #endregion  
+// #region Emits
+// #endregion
 
 // #region Data
 const modalReductors = ref<any>([]);
 const router = useRouter();
-// #endregion  
+// #endregion
 
 // #region Methods
 function setModalReductors(reductors: string[]) {
-  modalReductors.value = catalogData.filter(item => reductors.includes(item.type));
+  modalReductors.value = catalogData.filter((item) =>
+    reductors.includes(item.type),
+  );
 }
 
-function getImage(type: string)  {
-  return new URL(`../../assets/img/reductors/${type}/preview.svg`, import.meta.url).href
+function getImage(type: string) {
+  return new URL(
+    `../../assets/img/reductors/${type}/preview.svg`,
+    import.meta.url,
+  ).href;
 }
 
-function goToReductor(type: string = '', hasCloseAction: boolean = false) {
+function goToReductor(type: string = "", hasCloseAction: boolean = false) {
   if (type.length === 0) {
-    router.push('/catalog');
+    router.push("/catalog");
     return;
   }
 
-  router.push({name: 'reductor', params: { type: type }})
+  router.push({ name: "reductor", params: { type: type } });
 
   if (hasCloseAction) {
     modalReductors.value = [];
@@ -53,13 +59,13 @@ function goToReductor(type: string = '', hasCloseAction: boolean = false) {
 function resetModalReductors() {
   modalReductors.value = [];
 }
-// #endregion  
+// #endregion
 
-// #region Computed  
-// #endregion  
+// #region Computed
+// #endregion
 
 // #region Lifecycle
-// #endregion 
+// #endregion
 
 // #region Watchers
 // #endregion
@@ -67,38 +73,66 @@ function resetModalReductors() {
 
 <template>
   <div :class="$style.AdditionalMenu">
-      <div :class="$style.column">
-          <span @click="goToReductor('')" :class="$style.title">Цилиндрические мотор-редукторы серии G</span>
-          <span @click="goToReductor('gr',true)" :class="$style.subtitle">GR - соосно-цилиндрические</span>
-          <span @click="setModalReductors(['gs', 'mrv'])" :class="$style.subtitle">GS/NMRV - червячные</span>
-          <span @click="goToReductor('gk',true)" :class="$style.subtitle">GK - цилиндро-конические</span>
-          <span @click="goToReductor('gf',true)" :class="$style.subtitle">GF - плоскоцилиндрические</span>
-      </div>
+    <div :class="$style.column">
+      <span @click="goToReductor('')" :class="$style.title"
+        >Цилиндрические мотор-редукторы серии G</span
+      >
+      <span @click="goToReductor('gr', true)" :class="$style.subtitle"
+        >GR - соосно-цилиндрические</span
+      >
+      <span @click="setModalReductors(['gs', 'mrv'])" :class="$style.subtitle"
+        >GS/NMRV - червячные</span
+      >
+      <span @click="goToReductor('gk', true)" :class="$style.subtitle"
+        >GK - цилиндро-конические</span
+      >
+      <span @click="goToReductor('gf', true)" :class="$style.subtitle"
+        >GF - плоскоцилиндрические</span
+      >
+    </div>
 
     <div :class="$style.column">
-          <span @click="goToReductor('hb',true)" :class="$style.title">Промышленные редукторы серии HB</span>
-          <span @click="goToReductor('bw',true)" :class="$style.title">Редукторы циклоидальные</span>
-          <span @click="goToReductor('bx',true)" :class="$style.title">Планетарные редукторы</span>
-      </div>
+      <span @click="goToReductor('hb', true)" :class="$style.title"
+        >Промышленные редукторы серии HB</span
+      >
+      <span @click="goToReductor('bw', true)" :class="$style.title"
+        >Редукторы циклоидальные</span
+      >
+      <span @click="goToReductor('bx', true)" :class="$style.title"
+        >Планетарные редукторы</span
+      >
+    </div>
 
     <div :class="$style.column">
-          <span :class="$style.title" @click="setModalReductors(['smr', 'xg'])">Навесные редукторы</span>
-          <span :class="$style.title" @click="setModalReductors(['kzb', 'ksp', 'khz', 'ihd', 'fjx', 'hw', 'kcp'])">Насосы</span>
+      <span :class="$style.title" @click="setModalReductors(['smr', 'xg'])"
+        >Навесные редукторы</span
+      >
+      <span
+        :class="$style.title"
+        @click="
+          setModalReductors(['kzb', 'ksp', 'khz', 'ihd', 'fjx', 'hw', 'kcp'])
+        "
+        >Насосы</span
+      >
     </div>
   </div>
 
   <div :class="$style.modal" v-if="modalReductors.length > 0">
-      <div :class="$style.reductors">
-        <span :class="$style.closeIcon" @click="resetModalReductors">❌</span>
+    <div :class="$style.reductors">
+      <span :class="$style.closeIcon" @click="resetModalReductors">❌</span>
 
-        <div :class="$style.reductorsItems">
-          <div v-for="reductor in modalReductors" :class="$style.modalReductor" @click="goToReductor(reductor.type,true)">
-            <img :src="getImage(reductor.type)" />
+      <div :class="$style.reductorsItems">
+        <div
+          v-for="reductor in modalReductors"
+          :class="$style.modalReductor"
+          @click="goToReductor(reductor.type, true)"
+        >
+          <img :src="getImage(reductor.type)" />
 
-            <p :class="$style.modalReductorTitle">{{ reductor?.title }}</p>
-          </div>
+          <p :class="$style.modalReductorTitle">{{ reductor?.title }}</p>
         </div>
       </div>
+    </div>
   </div>
 </template>
 
@@ -108,7 +142,6 @@ function resetModalReductors() {
   justify-content: space-between;
   transition: var(--default-transition);
   width: 100%;
-  padding: 1rem 2rem;
   background: var(--dark-gray);
 
   span {
@@ -120,6 +153,7 @@ function resetModalReductors() {
 
 .column {
   display: flex;
+  padding: 2rem;
   flex-direction: column;
   text-decoration: none;
 }
@@ -151,7 +185,7 @@ function resetModalReductors() {
     width: 100%;
     height: 100%;
     background-color: var(--dark-gray);
-    opacity: .4;
+    opacity: 0.4;
   }
 
   .reductors {
@@ -172,6 +206,7 @@ function resetModalReductors() {
       background: var(--white);
       max-width: 40rem;
       max-height: 30rem;
+      padding: 2rem;
       cursor: pointer;
 
       img {

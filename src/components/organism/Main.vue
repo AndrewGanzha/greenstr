@@ -4,48 +4,48 @@
  * Ссылка на макет - https://www.figma.com/design/hash
  */
 
-// #region Imports  
-// Types  
-// Utils  
-// Vue  
-// Pinia  
-// Components  
-// #endregion  
+// #region Imports
+// Types
+// Utils
+// Vue
+// Pinia
+// Components
+// #endregion
 
-// #region Interfaces  
-// #endregion  
+// #region Interfaces
+// #endregion
 
-// #region Props  
-// #endregion  
+// #region Props
+// #endregion
 
-// #region Emits  
-// #endregion  
+// #region Emits
+// #endregion
 
 // #region Data
 const imagesWork = [
-    'company/work/Guomao.png',
-    'company/work/bonf.png',
-    'company/work/sew.png',
-    'company/work/Boneng.png',
-    'company/work/Flender.png',
-    'company/work/ksb.png'
-]
+  "company/work/Guomao.png",
+  "company/work/bonf.png",
+  "company/work/sew.png",
+  "company/work/Boneng.png",
+  "company/work/Flender.png",
+  "company/work/ksb.png",
+];
 
 const imagesTrust = [
-  'company/trust/r.png',
-  'company/trust/agroeko.png',
-  'company/trust/prodimex.png',
-]
+  "company/trust/r.png",
+  "company/trust/agroeko.png",
+  "company/trust/prodimex.png",
+];
 // #endregion
 
-// #region Methods  
-// #endregion  
+// #region Methods
+// #endregion
 
-// #region Computed  
-// #endregion  
+// #region Computed
+// #endregion
 
-// #region Lifecycle  
-// #endregion 
+// #region Lifecycle
+// #endregion
 
 // #region Watchers
 // #endregion
@@ -53,21 +53,21 @@ const imagesTrust = [
 
 <template>
   <div :class="$style.Main">
-      <div :class="$style.companies">
-        <Label :class="$style.title">Мы работаем</Label>
+    <div :class="$style.companies">
+      <Label :class="$style.title">Мы работаем</Label>
 
-        <div :class="$style.images">
-          <img v-for="img in imagesWork" :src="img"/>
-        </div>
+      <div :class="$style.images">
+        <img v-for="img in imagesWork" :src="img" />
       </div>
+    </div>
 
-      <div :class="$style.companies">
-        <Label :class="$style.title">Нам доверяют</Label>
+    <div :class="$style.companies">
+      <Label :class="$style.title">Нам доверяют</Label>
 
-        <div :class="$style.images">
-          <img v-for="img in imagesTrust" :src="img"/>
-        </div>
+      <div :class="$style.images">
+        <img v-for="img in imagesTrust" :src="img" />
       </div>
+    </div>
   </div>
 </template>
 
@@ -94,6 +94,6 @@ const imagesTrust = [
   align-items: center;
   width: fit-content;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6rem ;
+  gap: 6rem;
 }
 </style>

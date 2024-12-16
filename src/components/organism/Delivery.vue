@@ -4,38 +4,38 @@
  * Ссылка на макет - https://www.figma.com/design/hash
  */
 
-// #region Imports  
-// Types  
-// Utils  
-// Vue  
-// Pinia  
-// Components  
-// #endregion  
+// #region Imports
+// Types
+// Utils
+// Vue
+// Pinia
+// Components
+// #endregion
 
-// #region Interfaces  
-// #endregion  
+// #region Interfaces
+// #endregion
 
-// #region Props  
-// #endregion  
+// #region Props
+// #endregion
 
-// #region Emits  
-// #endregion  
+// #region Emits
+// #endregion
 
-// #region Data  
-// #endregion  
+// #region Data
+// #endregion
 
-// #region Methods  
-// #endregion  
+// #region Methods
+// #endregion
 
-// #region Computed  
-// #endregion  
+// #region Computed
+// #endregion
 
-// #region Lifecycle  
-// #endregion 
+// #region Lifecycle
+// #endregion
 
 // #region Watchers
 // #endregion
-import {deliveryText} from "../../assets/data/delivery.ts";
+import { deliveryText } from "../../assets/data/delivery.ts";
 import Label from "../atoms/text/Label.vue";
 </script>
 
@@ -43,7 +43,7 @@ import Label from "../atoms/text/Label.vue";
   <div :class="$style.delivery">
     <div v-for="block in deliveryText" :class="$style.deilver">
       <Label :class="$style.title">{{ block.title }}</Label>
-      <br>
+      <br />
       <Label :class="$style.text">{{ block.text }}</Label>
     </div>
   </div>

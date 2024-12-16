@@ -1,17 +1,17 @@
 <script setup lang="ts">
 interface ILinkProps {
-  route?: string
-  name?: string
+  route?: string;
+  name?: string;
 }
 
 withDefaults(defineProps<ILinkProps>(), {
-    route: '/',
-    name: 'google.com'
- })
+  route: "/",
+  name: "google.com",
+});
 </script>
 
 <template>
-  <router-link  :to="route" class="link">
+  <router-link :to="route" class="link">
     <span class="linkTitle">{{ name }}</span>
   </router-link>
 </template>
@@ -20,8 +20,8 @@ withDefaults(defineProps<ILinkProps>(), {
 .link {
   text-decoration: none;
   background: var(--black-gray);
-  padding: .4rem 1rem;
-  border-radius: .6rem;
+  padding: 0.4rem 1rem;
+  border-radius: 0.6rem;
   cursor: pointer;
   font-size: 2.4rem;
   transition: var(--default-transition);
@@ -30,7 +30,6 @@ withDefaults(defineProps<ILinkProps>(), {
 .linkTitle {
   transition: var(--default-transition);
   color: var(--white);
-
 }
 
 .router-link-active {
