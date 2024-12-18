@@ -5,6 +5,7 @@
  */
 
 // #region Imports
+import { deliveryText } from "../../assets/data/delivery.ts";
 // Types
 // Utils
 // Vue
@@ -35,35 +36,31 @@
 
 // #region Watchers
 // #endregion
-import { deliveryText } from "../../assets/data/delivery.ts";
-import Label from "../atoms/text/Label.vue";
 </script>
 
 <template>
   <div :class="$style.delivery">
     <div v-for="block in deliveryText" :class="$style.deilver">
-      <Label :class="$style.title">{{ block.title }}</Label>
-      <br />
-      <Label :class="$style.text">{{ block.text }}</Label>
+      <p :class="$style.title">{{ block.title }}</p>
+      <p :class="$style.text">{{ block.text }}</p>
     </div>
   </div>
 </template>
 
 <style module lang="scss">
 .delivery {
-  max-width: 72rem;
+  max-width: 73rem;
   margin: 0 auto;
   display: flex;
-  gap: 2rem;
+  font-size: 2rem;
   flex-direction: column;
 }
 
 .title {
   font-weight: 600;
-  margin-bottom: 0.6rem;
 }
 
 .text {
-  font-weight: 300;
+  font-weight: 400;
 }
 </style>

@@ -9,6 +9,7 @@ import CatalogCard from "./CatalogCard.vue";
 import { catalogData } from "../../../assets/data/catalogList.ts";
 import TextBlock from "../../atoms/text/TextBlock.vue";
 import router from "../../../config/router.ts";
+import { computed } from "vue";
 // Types
 // Utils
 // Vue
@@ -34,6 +35,11 @@ const text =
 // #endregion
 
 // #region Computed
+const activeReductors = computed(() => {
+  let defaultType = ["gr", "gs", "gk", "gf"];
+
+  return catalogData.filter((item) => defaultType.includes(item.type));
+});
 // #endregion
 
 // #region Lifecycle
@@ -47,7 +53,7 @@ const text =
   <div :class="$style.catalog">
     <CatalogCard
       :class="$style.catalogCard"
-      v-for="reductor in catalogData"
+      v-for="reductor in activeReductors"
       :title="reductor.title"
       :type="reductor.type"
       @click="

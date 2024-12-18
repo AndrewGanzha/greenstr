@@ -32,14 +32,14 @@ const router = useRouter();
 // #region Methods
 function setModalReductors(reductors: string[]) {
   modalReductors.value = catalogData.filter((item) =>
-    reductors.includes(item.type),
+    reductors.includes(item.type)
   );
 }
 
 function getImage(type: string) {
   return new URL(
     `../../assets/img/reductors/${type}/preview.svg`,
-    import.meta.url,
+    import.meta.url
   ).href;
 }
 
@@ -98,7 +98,7 @@ function resetModalReductors() {
       <span @click="goToReductor('bw', true)" :class="$style.title"
         >Редукторы циклоидальные</span
       >
-      <span @click="goToReductor('bx', true)" :class="$style.title"
+      <span @click="goToReductor('gx', true)" :class="$style.title"
         >Планетарные редукторы</span
       >
     </div>
@@ -153,9 +153,14 @@ function resetModalReductors() {
 
 .column {
   display: flex;
+  height: 100%;
   padding: 2rem;
   flex-direction: column;
   text-decoration: none;
+
+  :nth-child(3) {
+    justify-content: space-between;
+  }
 }
 
 .title {

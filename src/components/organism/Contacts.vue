@@ -51,7 +51,7 @@ import { contactsData } from "../../assets/data/contacts.ts";
 
     <div :class="$style.icons">
       <a :class="$style.icon" href="https://wa.me/79036557771" target="_blank">
-        <img src="../../assets/img/icons/whatsapp.svg" alt="whatsapp" />
+        <img src="/icons/whatsapp.svg" alt="whatsapp" />
       </a>
 
       <a
@@ -59,19 +59,18 @@ import { contactsData } from "../../assets/data/contacts.ts";
         href="mailto:ryzhikova.a@grinstr.ru"
         target="_blank"
       >
-        <img src="../../assets/img/icons/email.svg" alt="email" @click="" />
+        <img src="/icons/email.svg" alt="email" @click="" />
       </a>
     </div>
   </div>
 
-  <img :class="$style.map" src="../../assets/img/map.png" alt="map" />
+  <img :class="$style.map" src="/common/map.png" alt="map" />
 </template>
 
 <style module lang="scss">
 .Contacts {
   margin: 0 auto;
   width: fit-content;
-  height: 100%;
   position: relative;
   font-size: 2.4rem;
   display: flex;
@@ -81,10 +80,8 @@ import { contactsData } from "../../assets/data/contacts.ts";
 }
 
 .map {
-  display: none;
-  width: 100vw;
-  max-height: 40rem;
   position: absolute;
+  width: 100%;
   left: 0;
   z-index: 2;
   bottom: 0;

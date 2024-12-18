@@ -436,16 +436,16 @@ export const reductorsData = [
     ],
     performanceOptionsTable: [
       [["Тип"], "Изображение", ["Диапазон передаточных чисел"]],
-      [["GX2N.."], "../../assets/img/reductors/gx/table-1-1.svg", ["25~40"]],
-      [["GX2S."], "../../assets/img/reductors/gx/table-1-2.svg", ["45~125"]],
+      [["GX2N.."], "/reductors/gx/table-1-1.svg", ["25~40"]],
+      [["GX2S."], "/reductors/gx/table-1-2.svg", ["45~125"]],
       [
         ["GX2L..", "GX2K"],
-        "../../assets/img/reductors/gx/table-1-3.svg",
+        "/reductors/gx/table-1-3.svg",
         ["31.5~100 (L)", "112~500 (K)"],
       ],
-      [["GX3N.."], "../../assets/img/reductors/gx/table-1-4.svg", ["140~280"]],
-      [["GX3S.."], "../../assets/img/reductors/gx/table-1-5.svg", ["280~900"]],
-      [["GX3K.."], "../../assets/img/reductors/gx/table-1-6.svg", ["560~4000"]],
+      [["GX3N.."], "/reductors/gx/table-1-4.svg", ["140~280"]],
+      [["GX3S.."], "/reductors/gx/table-1-5.svg", ["280~900"]],
+      [["GX3K.."], "/reductors/gx/table-1-6.svg", ["560~4000"]],
     ],
     mountingPosition: [
       { image: ["/reductors/bw/1.svg"] },

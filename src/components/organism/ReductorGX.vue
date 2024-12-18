@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import TextBlock from "../atoms/text/TextBlock.vue";
+import ReductorGXTable from "./ReductorGXTable.vue";
 
 interface IProps {
   reductor: any;
@@ -43,6 +44,10 @@ defineProps<IProps>();
           </tr>
         </tbody>
       </table>
+
+      <h2 :class="$style.subtitle">Монтажное положение</h2>
+
+      <ReductorGXTable />
     </div>
   </TextBlock>
 </template>
@@ -58,21 +63,39 @@ defineProps<IProps>();
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid var(--black-gray);
+  padding-bottom: 2rem;
+  table-layout: fixed;
+
+  table,
+  td,
+  th {
+    border: 1px solid var(--white);
+  }
 
   tr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid var(--white);
+    height: fit-content;
 
     td {
-      width: 33%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+      height: 3rem;
       text-align: center;
+      width: 33%;
     }
 
     td > img {
       width: 100%;
+    }
+  }
+
+  :not(:first-child) {
+    td {
+      height: 21rem;
     }
   }
 }
@@ -84,5 +107,15 @@ defineProps<IProps>();
     width: 100%;
     background-color: red;
   }
+}
+
+.subtitle {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 300;
+  font-size: 2.4rem;
+  border-bottom: 1px solid var(--white);
+  margin-bottom: 2rem;
 }
 </style>

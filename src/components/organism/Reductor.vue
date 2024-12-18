@@ -95,6 +95,8 @@ watch(
         imgPath.value = module.default;
       });
     }
+
+    activeCategory.value = "description";
   },
   { immediate: true } // Этот параметр заставляет наблюдатель запускаться сразу при инициализации, если данные уже есть
 );
@@ -146,7 +148,7 @@ watch(
       </div>
     </div>
 
-    <div v-if="activeCategory === 'description'">
+    <div v-if="activeCategory === 'description' && reductorType.description">
       <TextBlock v-html="reductorType.description" />
     </div>
 
