@@ -65,6 +65,7 @@ import AdditionalMenu from "../molecules/AdditionalMenu.vue";
 }
 
 .content {
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: space-between;

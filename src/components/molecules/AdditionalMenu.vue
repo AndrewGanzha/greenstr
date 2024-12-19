@@ -204,14 +204,18 @@ function resetModalReductors() {
     justify-content: center;
 
     .reductorsItems {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .modalReductor {
+      display: flex;
+      flex-direction: column;
       background: var(--white);
       max-width: 40rem;
       max-height: 30rem;
       padding: 2rem;
+      justify-content: center;
       cursor: pointer;
 
       img {

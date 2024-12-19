@@ -9,6 +9,7 @@ import { useRoute } from "vue-router";
 import TextBlock from "../atoms/text/TextBlock.vue";
 import ReductorGX from "./ReductorGX.vue";
 import ReductorMountingPosition from "../molecules/ReductorMountingPosition.vue";
+import ReductorGuarantee from "./ReductorGuarantee.vue";
 
 // #region Imports
 // Types
@@ -59,6 +60,9 @@ const reductorType = ref<any>(
 // #endregion
 
 // #region Methods
+function changeCategory() {
+  activeCategory.value = "description";
+}
 // #endregion
 
 // #region Computed
@@ -140,6 +144,8 @@ watch(
       </div>
 
       <div v-if="reductorType.performanceParameters">
+        <p :class="$style.subtitlePerfomance">Параметры производительности</p>
+
         <ul :class="$style.description">
           <li v-for="item in reductorType.performanceParameters">
             {{ item }}
@@ -256,6 +262,11 @@ watch(
       <ReductorGX :reductor="reductorType" :active-category="activeCategory" />
     </div>
   </div>
+
+  <ReductorGuarantee
+    v-if="activeCategory === 'garant'"
+    @change-category="changeCategory"
+  />
 </template>
 
 <style module lang="scss">
@@ -297,6 +308,15 @@ watch(
   font-weight: 300;
   font-size: 2.4rem;
   border-bottom: 1px solid var(--white);
+}
+
+.subtitlePerfomance {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.4rem;
+  padding-top: 2.2rem;
 }
 
 .list {
