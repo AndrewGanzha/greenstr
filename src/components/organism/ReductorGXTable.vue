@@ -22,28 +22,28 @@
     <div class="div24"><img src="/reductors/gx/table-2-3.svg" /></div>
     <div class="div25">2</div>
     <div class="div26">GX.K.</div>
-    <div class="div27"><img src="/reductors/gx/table-2-6.svg" /></div>
-    <div class="div28"><img src="/reductors/gx/table-2-6.svg" /></div>
-    <div class="div29"><img src="/reductors/gx/table-2-6.svg" /></div>
-    <div class="div30"><img src="/reductors/gx/table-2-6.svg" /></div>
+    <div class="div27"><img src="/reductors/gx/table-2-10.svg" /></div>
+    <div class="div28"><img src="/reductors/gx/table-2-11.svg" /></div>
+    <div class="div29"><img src="/reductors/gx/table-2-12.svg" /></div>
+    <div class="div30"><img src="/reductors/gx/table-2-13.svg" /></div>
     <div class="div31"><img src="/reductors/gx/table-2-3.svg" /></div>
     <div class="div32">3</div>
     <div class="div33">GX.L</div>
-    <div class="div34">34</div>
-    <div class="div35">35</div>
-    <div class="div36">36</div>
-    <div class="div37">37</div>
+    <div class="div34"><img src="/reductors/gx/table-2-14.svg" /></div>
+    <div class="div35"><img src="/reductors/gx/table-2-15.svg" /></div>
+    <div class="div36"><img src="/reductors/gx/table-2-16.svg" /></div>
+    <div class="div37"><img src="/reductors/gx/table-2-17.svg" /></div>
     <div class="div38">5</div>
-    <div class="div40"><img src="/reductors/gx/table-2-1.svg" /></div>
-    <div class="div41"><img src="/reductors/gx/table-2-1.svg" /></div>
-    <div class="div42"><img src="/reductors/gx/table-2-1.svg" /></div>
-    <div class="div43"><img src="/reductors/gx/table-2-1.svg" /></div>
-    <div class="div44"><img src="/reductors/gx/table-2-1.svg" /></div>
-    <div class="div45"><img src="/reductors/gx/table-2-1.svg" /></div>
-    <div class="div46"><img src="/reductors/gx/table-2-1.svg" /></div>
-    <div class="div47">47</div>
-    <div class="div48">48</div>
-    <div class="div49">49</div>
+    <div class="div40"><img src="/reductors/gx/table-2-18.svg" /></div>
+    <div class="div41"><img src="/reductors/gx/table-2-19.svg" /></div>
+    <div class="div42"><img src="/reductors/gx/table-2-24.svg" /></div>
+    <div class="div43"><img src="/reductors/gx/table-2-20.svg" /></div>
+    <div class="div44"><img src="/reductors/gx/table-2-22.svg" /></div>
+    <div class="div45"><img src="/reductors/gx/table-2-21.svg" /></div>
+    <div class="div46"><img src="/reductors/gx/table-2-23.svg" /></div>
+    <div class="div47"><img src="/reductors/gx/table-2-25.svg" /></div>
+    <div class="div48"><img src="/reductors/gx/table-2-26.svg" /></div>
+    <div class="div49"><img src="/reductors/gx/table-2-27.svg" /></div>
     <div class="div50">
       <ol>
         <li>Наблюдайте с конца оси d1</li>
@@ -64,7 +64,7 @@
   align-items: center;
   justify-content: center;
   grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: repeat(18, 1fr);
+  grid-template-rows: repeat(18, auto);
 
   div {
     display: flex;
