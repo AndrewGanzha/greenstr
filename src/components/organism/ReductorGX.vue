@@ -54,6 +54,7 @@ defineProps<IProps>();
 
 <style lang="scss" module>
 .perfomances {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

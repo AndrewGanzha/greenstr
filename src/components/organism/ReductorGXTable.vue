@@ -11,8 +11,8 @@
     <div class="div15">
       Коническая шестерня-винтовая передача-планетарный редуктор
     </div>
-    <div class="div16">GX.S.</div>
-    <div class="div17">17</div>
+    <div class="div16">Коническая шестерня- Планетарный редуктор</div>
+    <div class="div17">Опорный рычаг с крутящим моментом</div>
     <div class="div18">1</div>
     <div class="div19">GX.S.</div>
     <div class="div20"><img src="/reductors/gx/table-2-6.svg" /></div>
@@ -27,24 +27,33 @@
     <div class="div29"><img src="/reductors/gx/table-2-6.svg" /></div>
     <div class="div30"><img src="/reductors/gx/table-2-6.svg" /></div>
     <div class="div31"><img src="/reductors/gx/table-2-3.svg" /></div>
-    <div class="div32">32</div>
-    <div class="div33">33</div>
+    <div class="div32">3</div>
+    <div class="div33">GX.L</div>
     <div class="div34">34</div>
     <div class="div35">35</div>
     <div class="div36">36</div>
     <div class="div37">37</div>
-    <div class="div38">38</div>
-    <div class="div40">40</div>
-    <div class="div41">41</div>
-    <div class="div42">42</div>
-    <div class="div43">43</div>
-    <div class="div44">44</div>
-    <div class="div45">45</div>
-    <div class="div46">46</div>
+    <div class="div38">5</div>
+    <div class="div40"><img src="/reductors/gx/table-2-1.svg" /></div>
+    <div class="div41"><img src="/reductors/gx/table-2-1.svg" /></div>
+    <div class="div42"><img src="/reductors/gx/table-2-1.svg" /></div>
+    <div class="div43"><img src="/reductors/gx/table-2-1.svg" /></div>
+    <div class="div44"><img src="/reductors/gx/table-2-1.svg" /></div>
+    <div class="div45"><img src="/reductors/gx/table-2-1.svg" /></div>
+    <div class="div46"><img src="/reductors/gx/table-2-1.svg" /></div>
     <div class="div47">47</div>
     <div class="div48">48</div>
     <div class="div49">49</div>
-    <div class="div50">50</div>
+    <div class="div50">
+      <ol>
+        <li>Наблюдайте с конца оси d1</li>
+        <li>
+          Необходимо проверить наличие смазочного масла, пожалуйста,
+          проконсультируйтесь с нами
+        </li>
+        <li>Когда форма сборки равна B561, она не может быть записана0</li>
+      </ol>
+    </div>
     <div class="div51"><img src="/reductors/gx/table-2-5.svg" /></div>
   </div>
 </template>
@@ -54,11 +63,26 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(11, auto);
-  grid-template-rows: repeat(18, auto);
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1rem;
+    height: 100%;
+    border: 1px solid var(--white);
+
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .div6 {
+  height: fit-content;
   grid-column: span 7 / span 7;
 }
 
