@@ -67,4 +67,12 @@ export const catalogData = [
     type: "kcp",
     title: "Санитарный центробежный насос",
   },
+  {
+    type: "shutter",
+    title: "Затвор дископовортный межфланцовый",
+  },
+  {
+    type: "ball",
+    title: "Кран шаровый полнопроходной",
+  },
 ];

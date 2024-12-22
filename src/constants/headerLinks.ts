@@ -9,6 +9,7 @@ export enum ERoutes {
   delivery = "/delivery",
   contact = "/contacts",
   reductor = "/reductor",
+  armature = "/armature",
 }
 
 export const headerLinks: IHeaderRoute[] = [

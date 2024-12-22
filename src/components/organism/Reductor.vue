@@ -10,6 +10,7 @@ import TextBlock from "../atoms/text/TextBlock.vue";
 import ReductorGX from "./ReductorGX.vue";
 import ReductorMountingPosition from "../molecules/ReductorMountingPosition.vue";
 import ReductorGuarantee from "./ReductorGuarantee.vue";
+import PreviewImage from "../common/PreviewImage.vue";
 
 // #region Imports
 // Types
@@ -55,7 +56,7 @@ const dataCategories = [
 ];
 const $route = useRoute();
 const reductorType = ref<any>(
-  reductorsData.find((item) => item.type === $route.params.type)
+  reductorsData.find((item) => item.type === $route.params.type),
 );
 // #endregion
 
@@ -70,15 +71,7 @@ function changeCategory() {
 
 // #region Lifecycle
 onMounted(() => {
-  const images = import.meta.glob("../../assets/img/reductors/*/preview.svg");
-
-  const imgKey = `../../assets/img/reductors/${$route.params.type}/preview.svg`;
-
-  if (images[imgKey]) {
-    images[imgKey]().then((module: any) => {
-      imgPath.value = module.default;
-    });
-  }
+  imgPath.value = `/reductors/${$route.params.type}/preview.svg`;
 });
 // #endregion
 
@@ -90,19 +83,11 @@ watch(
       reductorType.value = reductorsData.find((item) => item.type === newParam);
     }
 
-    const images = import.meta.glob("../../assets/img/reductors/*/preview.svg");
-
-    const imgKey = `../../assets/img/reductors/${$route.params.type}/preview.svg`;
-
-    if (images[imgKey]) {
-      images[imgKey]().then((module: any) => {
-        imgPath.value = module.default;
-      });
-    }
+    imgPath.value = `/reductors/${$route.params.type}/preview.svg`;
 
     activeCategory.value = "description";
   },
-  { immediate: true } // Этот параметр заставляет наблюдатель запускаться сразу при инициализации, если данные уже есть
+  { immediate: true },
 );
 // #endregion
 </script>
@@ -112,7 +97,7 @@ watch(
     <p :class="$style.title">{{ reductorType.title }}</p>
 
     <div :class="$style.menu">
-      <img :src="imgPath" :class="$style.img" />
+      <PreviewImage :img-path="imgPath" />
 
       <div>
         <div>
@@ -279,10 +264,6 @@ watch(
 .menu {
   display: flex;
   gap: 4rem;
-}
-
-.img {
-  width: 36rem;
 }
 
 .title {

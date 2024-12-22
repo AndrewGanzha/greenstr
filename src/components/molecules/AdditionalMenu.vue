@@ -32,14 +32,14 @@ const router = useRouter();
 // #region Methods
 function setModalReductors(reductors: string[]) {
   modalReductors.value = catalogData.filter((item) =>
-    reductors.includes(item.type)
+    reductors.includes(item.type),
   );
 }
 
 function getImage(type: string) {
   return new URL(
     `../../assets/img/reductors/${type}/preview.svg`,
-    import.meta.url
+    import.meta.url,
   ).href;
 }
 

@@ -5,6 +5,7 @@ import Main from "../components/organism/Main.vue";
 import Catalog from "../components/organism/Catalog/Catalog.vue";
 import Contacts from "../components/organism/Contacts.vue";
 import Reductor from "../components/organism/Reductor.vue";
+import Armature from "../components/Armature.vue";
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
     name: "reductor",
     path: `${ERoutes.reductor}/:type`,
     component: Reductor,
+  },
+  {
+    name: "armature",
+    path: `${ERoutes.armature}/:type`,
+    component: Armature,
   },
 ];
 
