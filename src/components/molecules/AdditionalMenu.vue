@@ -37,6 +37,13 @@ function setModalReductors(reductors: string[]) {
 }
 
 function getImage(type: string) {
+  if (type === "ball" || type === "shutter") {
+    return new URL(
+      `../../assets/img/armature/${type}/preview.svg`,
+      import.meta.url,
+    ).href;
+  }
+
   return new URL(
     `../../assets/img/reductors/${type}/preview.svg`,
     import.meta.url,
@@ -49,7 +56,11 @@ function goToReductor(type: string = "", hasCloseAction: boolean = false) {
     return;
   }
 
-  router.push({ name: "reductor", params: { type: type } });
+  if (type === "ball" || type === "shutter") {
+    router.push({ name: "armature", params: { type: type } });
+  } else {
+    router.push({ name: "reductor", params: { type: type } });
+  }
 
   if (hasCloseAction) {
     modalReductors.value = [];
@@ -113,6 +124,11 @@ function resetModalReductors() {
           setModalReductors(['kzb', 'ksp', 'khz', 'ihd', 'fjx', 'hw', 'kcp'])
         "
         >Насосы</span
+      >
+      <span
+        :class="$style.title"
+        @click="setModalReductors(['ball', 'shutter'])"
+        >Запорная арматура</span
       >
     </div>
   </div>

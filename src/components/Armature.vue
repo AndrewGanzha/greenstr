@@ -77,6 +77,7 @@ watch(
           <button
             v-for="(button, idx) in shutterType.diameters"
             @click="activeButtonIndex = idx"
+            :class="idx === activeButtonIndex ? $style.activeButton : ''"
           >
             {{ `DN${button}` }}
           </button>
@@ -209,5 +210,9 @@ watch(
     margin: 0;
     font-weight: 300;
   }
+}
+
+.activeButton {
+  scale: 1.1;
 }
 </style>
