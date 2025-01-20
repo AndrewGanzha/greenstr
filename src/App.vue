@@ -4,23 +4,31 @@ import SearchBar from "./components/organism/SearchBar.vue";
 </script>
 
 <template>
-  <Header />
+  <div style="position: relative">
+    <Header />
 
-  <SearchBar />
+    <SearchBar />
 
-  <main class="main">
-    <img src="./assets/img/rectangle.svg" alt="rectangle" class="upRectangle" />
-    <div class="container">
-      <div class="content">
-        <router-view />
+    <main class="main">
+      <img
+        src="./assets/img/rectangle.svg"
+        alt="rectangle"
+        class="upRectangle"
+      />
+      <div class="container">
+        <div class="content">
+          <router-view />
+        </div>
       </div>
-    </div>
-    <img
-      src="./assets/img/rectangle.svg"
-      alt="rectangle"
-      class="bottomRectangle"
-    />
-  </main>
+      <!-- todo пофиксить треугольник-->
+      <img
+        style="display: none"
+        src="./assets/img/rectangle.svg"
+        alt="rectangle"
+        class="bottomRectangle"
+      />
+    </main>
+  </div>
 </template>
 
 <style>
@@ -48,7 +56,6 @@ import SearchBar from "./components/organism/SearchBar.vue";
 
 .content {
   padding-top: 3rem;
-  height: calc(100vh - 14.6rem);
   margin: 0 auto;
 }
 

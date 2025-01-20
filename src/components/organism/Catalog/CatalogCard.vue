@@ -3,8 +3,6 @@
  * @desc Описание компонента
  * Ссылка на макет - https://www.figma.com/design/hash
  */
-import { onMounted, ref } from "vue";
-
 // #region Imports
 // Types
 // Utils
@@ -27,7 +25,6 @@ const props = defineProps({
 // #endregion
 
 // #region Data
-const imgPath = ref<string>("");
 // #endregion
 
 // #region Methods
@@ -37,19 +34,6 @@ const imgPath = ref<string>("");
 // #endregion
 
 // #region Lifecycle
-onMounted(() => {
-  const images = import.meta.glob(
-    "../../../assets/img/reductors/*/preview.svg",
-  );
-
-  const imgKey = `../../../assets/img/reductors/${props.type}/preview.svg`;
-
-  if (images[imgKey]) {
-    images[imgKey]().then((module: any) => {
-      imgPath.value = module.default;
-    });
-  }
-});
 // #endregion
 
 // #region Watchers
@@ -58,7 +42,11 @@ onMounted(() => {
 
 <template>
   <div :class="$style.catalogCard">
-    <img :src="imgPath" alt="reductor" :class="$style.catalogCardImg" />
+    <img
+      :src="`public/reductors/${props.type}/preview.svg`"
+      alt="reductor"
+      :class="$style.catalogCardImg"
+    />
 
     <p :class="$style.catalogTitle">{{ title }}</p>
   </div>
@@ -74,8 +62,9 @@ onMounted(() => {
 }
 
 .catalogCardImg {
-  margin: auto 0;
+  max-height: 80%;
   max-width: 20rem;
+  margin: auto 0;
 }
 
 .catalogTitle {

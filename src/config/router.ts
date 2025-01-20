@@ -14,6 +14,8 @@ const routes = [
   },
   {
     path: ERoutes.catalog,
+    props: true,
+    name: "catalog",
     component: Catalog,
   },
   {

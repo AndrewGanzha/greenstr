@@ -7,24 +7,6 @@ import { useRouter } from "vue-router";
 import { ref } from "vue";
 import { catalogData } from "../../assets/data/catalogList.ts";
 
-// #region Imports
-// Types
-// Utils
-// Vue
-// Pinia
-// Components
-// #endregion
-
-// #region Interfaces
-// #endregion
-
-// #region Props
-// #endregion
-
-// #region Emits
-// #endregion
-
-// #region Data
 const modalReductors = ref<any>([]);
 const router = useRouter();
 // #endregion
@@ -194,7 +176,7 @@ function resetModalReductors() {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   align-content: center;
 
   &:before {
@@ -222,6 +204,7 @@ function resetModalReductors() {
     .reductorsItems {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      grid-auto-flow: row;
     }
 
     .modalReductor {
