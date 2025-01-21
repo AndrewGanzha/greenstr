@@ -55,7 +55,7 @@ const activeReductors = computed(() => {
   if (search.searchItems && search.searchItems.length > 0) {
     filter = search.searchItems;
   } else if (search.searchName) {
-    filter = [search.searchName];
+    filter = search.searchName;
   }
 
   if (!filter) {

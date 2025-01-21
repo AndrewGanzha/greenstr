@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { catalogData } from "../../assets/data/catalogList.ts";
 // @ts-ignore
 import { useSearchStore } from "../../store/search.js";
 import { ref } from "vue";
@@ -10,12 +9,14 @@ const router = useRouter();
 const searchQuery = ref("");
 
 function searchQueryHandler(query: string) {
-  return catalogData.filter((item) => {
-    return (
-      item.title.toLowerCase().indexOf(query.toLowerCase()) > -1 ||
-      item.type.toLowerCase().indexOf(query.toLowerCase()) > -1
-    );
-  });
+  search.clearSearchItems();
+  search.clearSearchName();
+  if (query.length > 0) {
+    search.setSearchName(query);
+    router.push("/catalog");
+  } else {
+    alert("Введите запрос");
+  }
 }
 
 function goToCatalog(type: string[] | string) {
@@ -51,21 +52,31 @@ function goToCatalog(type: string[] | string) {
         >
       </div>
     </div>
-    <input
-      @keyup.enter="searchQueryHandler(searchQuery)"
-      placeholder="Поиск по каталогу"
-      :class="$style.search"
-      v-model="searchQuery"
-    />
+    <div :class="$style.search">
+      <input
+        @keyup.enter="searchQueryHandler(searchQuery)"
+        placeholder="Поиск по каталогу"
+        v-model="searchQuery"
+      />
+
+      <img
+        src="/icons/search.svg"
+        alt="search"
+        :class="$style.searchIcon"
+        @click="searchQueryHandler(searchQuery)"
+      />
+    </div>
   </div>
 </template>
 
 <style module lang="scss">
 .searchBar {
   display: flex;
+  align-items: center;
   position: relative;
   z-index: 2;
   padding: 1rem 6rem;
+  height: 100%;
   height: 100%;
   background-color: var(--black-gray);
 }
@@ -143,14 +154,30 @@ function goToCatalog(type: string[] | string) {
 }
 
 .search {
-  padding: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1rem;
+  gap: 1rem;
   cursor: pointer;
   border: none;
+  width: 50%;
   height: fit-content;
   outline: none;
   background-color: var(--white);
   font-size: 1.8rem;
   border-radius: 2.4rem;
+
+  input {
+    padding: 0 2rem;
+    width: 100%;
+    border: none;
+  }
+
+  .searchIcon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 }
 
 .dropdown {
