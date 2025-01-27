@@ -147,6 +147,10 @@ function resetModalReductors() {
     cursor: pointer;
     color: var(--white);
   }
+
+  @include respond-to(tablet) {
+    display: none;
+  }
 }
 
 .column {

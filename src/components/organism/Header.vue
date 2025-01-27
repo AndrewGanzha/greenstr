@@ -43,6 +43,7 @@ function openMenu() {
 import Logo from "../atoms/images/Logo.vue";
 import Links from "../molecules/Links.vue";
 import AdditionalMenu from "../molecules/AdditionalMenu.vue";
+import MobileMenu from "../molecules/MobileMenu.vue";
 </script>
 
 <template>
@@ -50,9 +51,19 @@ import AdditionalMenu from "../molecules/AdditionalMenu.vue";
     <div :class="$style.content">
       <Logo />
       <Links @open-menu="openMenu" />
+      <img
+        @click="openMenu"
+        src="/icons/burger.svg"
+        :class="$style.burgerIcon"
+      />
     </div>
 
-    <AdditionalMenu v-if="isMenuShow" />
+    <AdditionalMenu :class="$style.additionalMenu" v-if="isMenuShow" />
+    <MobileMenu
+      :class="$style.mobileMenu"
+      v-if="!isMenuShow"
+      @close-modal="openMenu"
+    />
   </div>
 </template>
 
@@ -71,5 +82,30 @@ import AdditionalMenu from "../molecules/AdditionalMenu.vue";
   justify-content: space-between;
   align-items: center;
   height: 8rem;
+}
+
+.mobileMenu {
+  display: none;
+
+  @include respond-to(tablet) {
+    display: block;
+    z-index: 5;
+    position: absolute;
+    width: 100vw;
+    background-color: var(--dark-gray);
+    height: 100%;
+  }
+}
+
+.burgerIcon {
+  display: none;
+
+  @include respond-to(tablet) {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    padding-right: 2rem;
+  }
 }
 </style>
