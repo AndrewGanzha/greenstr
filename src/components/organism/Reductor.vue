@@ -4,7 +4,7 @@
  * Ссылка на макет - https://www.figma.com/design/hash
  */
 import { reductorsData } from "../../assets/data/reductors.ts";
-import { onMounted, ref, watch } from "vue";
+import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import TextBlock from "../atoms/text/TextBlock.vue";
 import ReductorGX from "./ReductorGX.vue";
@@ -30,7 +30,6 @@ import PreviewImage from "../common/PreviewImage.vue";
 // #endregion
 
 // #region Data
-const imgPath = ref<string>("");
 const activeCategory = ref<string>("description");
 const dataCategories = [
   {
@@ -70,9 +69,6 @@ function changeCategory() {
 // #endregion
 
 // #region Lifecycle
-onMounted(() => {
-  imgPath.value = `/reductors/${$route.params.type}/preview.svg`;
-});
 // #endregion
 
 // #region Watchers
@@ -82,8 +78,6 @@ watch(
     if (newParam) {
       reductorType.value = reductorsData.find((item) => item.type === newParam);
     }
-
-    imgPath.value = `/reductors/${$route.params.type}/preview.svg`;
 
     activeCategory.value = "description";
   },
@@ -97,7 +91,9 @@ watch(
     <p :class="$style.title">{{ reductorType.title }}</p>
 
     <div :class="$style.menu">
-      <PreviewImage :img-path="imgPath" />
+      <PreviewImage
+        :img-path="`/reductors/${$route.params.type}/preview.svg`"
+      />
 
       <div :class="$style.menuDescription">
         <div>
