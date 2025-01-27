@@ -57,5 +57,9 @@ import Link from "../atoms/text/Link.vue";
   gap: 6rem;
   padding-right: 11.2rem;
   height: fit-content;
+
+  @include respond-to(tablet) {
+    display: none;
+  }
 }
 </style>

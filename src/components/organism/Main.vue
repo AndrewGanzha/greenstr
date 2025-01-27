@@ -76,6 +76,11 @@ const imagesTrust = [
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+
+  @include respond-to(tablet) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .companies {

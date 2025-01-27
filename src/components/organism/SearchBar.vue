@@ -178,6 +178,10 @@ function goToCatalog(type: string[] | string) {
     width: 2.4rem;
     height: 2.4rem;
   }
+
+  @include respond-to(tablet) {
+    width: 100%;
+  }
 }
 
 .dropdown {
@@ -189,6 +193,10 @@ function goToCatalog(type: string[] | string) {
     .dropdownItems {
       display: flex;
     }
+  }
+
+  @include respond-to(tablet) {
+    display: none;
   }
 }
 </style>

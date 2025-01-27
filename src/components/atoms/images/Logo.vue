@@ -3,6 +3,7 @@
  * @desc Описание компонента
  * Ссылка на макет - https://www.figma.com/design/hash
  */
+import { useRouter } from "vue-router";
 
 // #region Imports
 // Types
@@ -22,6 +23,7 @@
 // #endregion
 
 // #region Data
+const router = useRouter();
 // #endregion
 
 // #region Methods
@@ -38,7 +40,7 @@
 </script>
 
 <template>
-  <div :class="$style.logo">
+  <div :class="$style.logo" @click="router.push('/')">
     <svg
       viewBox="0 0 205 79"
       fill="currentColor"
@@ -80,5 +82,6 @@
   padding-left: 0.8rem;
   width: 20.4rem;
   height: 7.8rem;
+  cursor: pointer;
 }
 </style>

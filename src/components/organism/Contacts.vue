@@ -80,11 +80,11 @@ import { contactsData } from "../../assets/data/contacts.ts";
 }
 
 .map {
+  padding-top: 2rem;
   position: absolute;
   width: 100%;
   left: 0;
   z-index: 2;
-  bottom: 0;
 }
 
 .contact {

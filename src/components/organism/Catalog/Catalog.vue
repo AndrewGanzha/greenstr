@@ -124,6 +124,10 @@ onBeforeUnmount(() => {
   .catalogCard:nth-child(even) {
     background-color: var(--black);
   }
+
+  @include respond-to(tablet) {
+    justify-content: center;
+  }
 }
 
 .catalogCard {

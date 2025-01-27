@@ -99,7 +99,7 @@ watch(
     <div :class="$style.menu">
       <PreviewImage :img-path="imgPath" />
 
-      <div>
+      <div :class="$style.menuDescription">
         <div>
           <p
             v-for="category in dataCategories"
@@ -128,7 +128,10 @@ watch(
         </div>
       </div>
 
-      <div v-if="reductorType.performanceParameters">
+      <div
+        v-if="reductorType.performanceParameters"
+        :class="$style.menuDescription"
+      >
         <p :class="$style.subtitlePerfomance">Параметры производительности</p>
 
         <ul :class="$style.description">
@@ -259,11 +262,25 @@ watch(
   max-width: 100rem;
   width: fit-content;
   margin: 0 auto;
+
+  @include respond-to(tablet) {
+    padding: 0 2rem;
+  }
 }
 
 .menu {
   display: flex;
   gap: 4rem;
+
+  @include respond-to(tablet) {
+    padding-bottom: 3rem;
+  }
+}
+
+.menuDescription {
+  @include respond-to(tablet) {
+    display: none;
+  }
 }
 
 .title {
