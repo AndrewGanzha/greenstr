@@ -43,7 +43,7 @@ const props = defineProps({
 <template>
   <div :class="$style.catalogCard">
     <img
-      :src="`public/reductors/${props.type}/preview.svg`"
+      :src="`/reductors/${props.type}/preview.svg`"
       alt="reductor"
       :class="$style.catalogCardImg"
     />
