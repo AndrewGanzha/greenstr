@@ -6,6 +6,7 @@
 import { useRouter } from "vue-router";
 import { ref } from "vue";
 import { catalogData } from "../../assets/data/catalogList.ts";
+import ModalReductor from "./ModalReductor.vue";
 
 const modalReductors = ref<any>([]);
 const router = useRouter();
@@ -16,20 +17,6 @@ function setModalReductors(reductors: string[]) {
   modalReductors.value = catalogData.filter((item) =>
     reductors.includes(item.type),
   );
-}
-
-function getImage(type: string) {
-  if (type === "ball" || type === "shutter") {
-    return new URL(
-      `../../assets/img/armature/${type}/preview.svg`,
-      import.meta.url,
-    ).href;
-  }
-
-  return new URL(
-    `../../assets/img/reductors/${type}/preview.svg`,
-    import.meta.url,
-  ).href;
 }
 
 function goToReductor(type: string = "", hasCloseAction: boolean = false) {
@@ -45,7 +32,7 @@ function goToReductor(type: string = "", hasCloseAction: boolean = false) {
   }
 
   if (hasCloseAction) {
-    modalReductors.value = [];
+    resetModalReductors();
   }
 }
 
@@ -115,23 +102,10 @@ function resetModalReductors() {
     </div>
   </div>
 
-  <div :class="$style.modal" v-if="modalReductors.length > 0">
-    <div :class="$style.reductors">
-      <span :class="$style.closeIcon" @click="resetModalReductors">❌</span>
-
-      <div :class="$style.reductorsItems">
-        <div
-          v-for="reductor in modalReductors"
-          :class="$style.modalReductor"
-          @click="goToReductor(reductor.type, true)"
-        >
-          <img :src="getImage(reductor.type)" />
-
-          <p :class="$style.modalReductorTitle">{{ reductor?.title }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <ModalReductor
+    @reset-modal-reductors="resetModalReductors"
+    :modal-reductors="modalReductors"
+  />
 </template>
 
 <style module lang="scss">
@@ -174,66 +148,5 @@ function resetModalReductors() {
   text-decoration: none;
   font-weight: 200;
   font-size: 2rem;
-}
-
-.modal {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 3;
-  align-content: center;
-
-  &:before {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--dark-gray);
-    opacity: 0.4;
-  }
-
-  .reductors {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    width: fit-content;
-    margin: 0 auto;
-    justify-content: center;
-
-    .reductorsItems {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-flow: row;
-    }
-
-    .modalReductor {
-      display: flex;
-      flex-direction: column;
-      background: var(--white);
-      max-width: 40rem;
-      max-height: 30rem;
-      padding: 2rem;
-      justify-content: center;
-      cursor: pointer;
-
-      img {
-        height: 20rem;
-      }
-    }
-
-    .modalReductorTitle {
-      text-align: center;
-    }
-
-    .closeIcon {
-      cursor: pointer;
-      align-self: flex-end;
-    }
-  }
 }
 </style>

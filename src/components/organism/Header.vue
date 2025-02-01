@@ -27,7 +27,7 @@ const isMenuShow = ref<boolean>(false);
 // #endregion
 
 // #region Methods
-function openMenu() {
+function handleMenu() {
   isMenuShow.value = !isMenuShow.value;
 }
 // #endregion
@@ -50,9 +50,9 @@ import MobileMenu from "../molecules/MobileMenu.vue";
   <div :class="$style.Header">
     <div :class="$style.content">
       <Logo />
-      <Links @open-menu="openMenu" />
+      <Links @open-menu="handleMenu" />
       <img
-        @click="openMenu"
+        @click="handleMenu"
         src="/icons/burger.svg"
         :class="$style.burgerIcon"
       />
@@ -61,8 +61,8 @@ import MobileMenu from "../molecules/MobileMenu.vue";
     <AdditionalMenu :class="$style.additionalMenu" v-if="isMenuShow" />
     <MobileMenu
       :class="$style.mobileMenu"
-      v-if="!isMenuShow"
-      @close-modal="openMenu"
+      v-if="isMenuShow"
+      @close-modal="handleMenu"
     />
   </div>
 </template>

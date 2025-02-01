@@ -1,18 +1,52 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import { ref } from "vue";
+import { catalogData } from "../../assets/data/catalogList.ts";
+import ModalReductor from "./ModalReductor.vue";
 
-const catalogOpen = ref<boolean>(false);
 const router = useRouter();
 const emits = defineEmits(["closeModal"]);
+const openAdditionalMenu = ref(false);
+const modalReductors = ref<any[]>([]);
+
+function setModalReductors(reductors: string[]) {
+  modalReductors.value = catalogData.filter((item) =>
+    reductors.includes(item.type),
+  );
+}
+
+function goToReductor(type: string = "", hasCloseAction: boolean = false) {
+  openAdditionalMenu.value = false;
+
+  if (type.length === 0) {
+    router.push("/catalog");
+    emits("closeModal");
+    return;
+  }
+
+  if (type === "ball" || type === "shutter") {
+    router.push({ name: "armature", params: { type: type } });
+  } else {
+    router.push({ name: "reductor", params: { type: type } });
+  }
+
+  if (hasCloseAction) {
+    emits("closeModal");
+    resetModalReductors();
+  }
+}
+
+function resetModalReductors() {
+  modalReductors.value = [];
+}
 
 function clickMenu(isCatalog: boolean, path: string = "") {
   if (isCatalog) {
-    catalogOpen.value = !catalogOpen.value;
-  } else {
+    emits("closeModal");
     router.push({ path: `${path}` });
+  } else {
+    openAdditionalMenu.value = !openAdditionalMenu.value;
   }
-  emits("closeModal");
 }
 </script>
 
@@ -20,21 +54,66 @@ function clickMenu(isCatalog: boolean, path: string = "") {
   <div :class="$style.MobileMenu">
     <nav>
       <ul>
-        <li @click="clickMenu(false, '/')">Главная</li>
-        <li @click="clickMenu(true)">Каталог</li>
-        <li @click="clickMenu(false, '/delivery')">Доставка</li>
-        <li @click="clickMenu(false, '/contacts')">Контакты</li>
+        <li @click="clickMenu(true, '/')">Главная</li>
+        <li>
+          <p @click="clickMenu(false)">Каталог</p>
+          <ul v-if="openAdditionalMenu" :class="$style.additionalMenu">
+            <li @click="goToReductor('')">
+              Цилиндрические мотор-редукторы серии G
+            </li>
+            <li @click="goToReductor('hb', true)">
+              Промышленные редукторы серии HB
+            </li>
+            <li @click="goToReductor('bw', true)">Редукторы циклоидальные</li>
+            <li @click="goToReductor('gx', true)">Планетарные редукторы</li>
+            <li @click="setModalReductors(['smr', 'xg'])">
+              Навесные редукторы
+            </li>
+            <li
+              @click="
+                setModalReductors([
+                  'kzb',
+                  'ksp',
+                  'khz',
+                  'ihd',
+                  'fjx',
+                  'hw',
+                  'kcp',
+                ])
+              "
+            >
+              Насосы
+            </li>
+            <li @click="setModalReductors(['ball', 'shutter'])">
+              Запорная арматура
+            </li>
+          </ul>
+        </li>
+        <li @click="clickMenu(true, '/delivery')">Доставка</li>
+        <li @click="clickMenu(true, '/contacts')">Контакты</li>
       </ul>
     </nav>
+
+    <ModalReductor
+      v-if="modalReductors"
+      @reset-modal-reductors="resetModalReductors"
+      :modal-reductors="modalReductors"
+    />
   </div>
 </template>
 
 <style module lang="scss">
 .MobileMenu {
+  position: relative;
   padding: 2rem;
   color: var(--white);
 
+  p {
+    margin: 0;
+  }
+
   ul {
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -44,6 +123,14 @@ function clickMenu(isCatalog: boolean, path: string = "") {
     li {
       list-style: none;
     }
+  }
+}
+
+.additionalMenu {
+  gap: 1rem;
+
+  li {
+    font-size: 1.6rem;
   }
 }
 </style>
