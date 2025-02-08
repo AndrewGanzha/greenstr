@@ -260,7 +260,8 @@ watch(
   margin: 0 auto;
 
   @include respond-to(tablet) {
-    padding: 0 2rem;
+    max-width: none;
+    margin: 0 2rem;
   }
 }
 

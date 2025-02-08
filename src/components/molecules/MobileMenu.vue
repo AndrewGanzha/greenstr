@@ -7,12 +7,19 @@ import ModalReductor from "./ModalReductor.vue";
 const router = useRouter();
 const emits = defineEmits(["closeModal"]);
 const openAdditionalMenu = ref(false);
+const isModalClose = ref(false);
 const modalReductors = ref<any[]>([]);
 
 function setModalReductors(reductors: string[]) {
+  isModalClose.value = true;
   modalReductors.value = catalogData.filter((item) =>
     reductors.includes(item.type),
   );
+}
+
+function setModalCloseOpen() {
+  modalReductors.value = [];
+  isModalClose.value = false;
 }
 
 function goToReductor(type: string = "", hasCloseAction: boolean = false) {
@@ -26,8 +33,10 @@ function goToReductor(type: string = "", hasCloseAction: boolean = false) {
 
   if (type === "ball" || type === "shutter") {
     router.push({ name: "armature", params: { type: type } });
+    emits("closeModal");
   } else {
     router.push({ name: "reductor", params: { type: type } });
+    emits("closeModal");
   }
 
   if (hasCloseAction) {
@@ -38,6 +47,7 @@ function goToReductor(type: string = "", hasCloseAction: boolean = false) {
 
 function resetModalReductors() {
   modalReductors.value = [];
+  emits("closeModal");
 }
 
 function clickMenu(isCatalog: boolean, path: string = "") {
@@ -52,7 +62,7 @@ function clickMenu(isCatalog: boolean, path: string = "") {
 
 <template>
   <div :class="$style.MobileMenu">
-    <nav>
+    <nav v-if="!isModalClose">
       <ul>
         <li @click="clickMenu(true, '/')">Главная</li>
         <li>
@@ -97,6 +107,7 @@ function clickMenu(isCatalog: boolean, path: string = "") {
     <ModalReductor
       v-if="modalReductors"
       @reset-modal-reductors="resetModalReductors"
+      @set-modal-close-open="setModalCloseOpen"
       :modal-reductors="modalReductors"
     />
   </div>
@@ -105,7 +116,7 @@ function clickMenu(isCatalog: boolean, path: string = "") {
 <style module lang="scss">
 .MobileMenu {
   position: relative;
-  padding: 2rem;
+  padding-top: 2rem;
   color: var(--white);
 
   p {

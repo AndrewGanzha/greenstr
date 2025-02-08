@@ -40,13 +40,13 @@ function getImage(type: string) {
   ).href;
 }
 
-const emits = defineEmits(["resetModalReductors"]);
+const emits = defineEmits(["resetModalReductors", "setModalCloseOpen"]);
 </script>
 
 <template>
   <div :class="$style.modal" v-if="modalReductors.length > 0">
     <div :class="$style.reductors">
-      <span :class="$style.closeIcon" @click="$emit('resetModalReductors')"
+      <span :class="$style.closeIcon" @click="$emit('setModalCloseOpen')"
         >❌</span
       >
 
