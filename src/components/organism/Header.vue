@@ -58,7 +58,11 @@ import MobileMenu from "../molecules/MobileMenu.vue";
       />
     </div>
 
-    <AdditionalMenu :class="$style.additionalMenu" v-if="isMenuShow" />
+    <AdditionalMenu
+      :class="$style.additionalMenu"
+      v-if="isMenuShow"
+      @close-menu="handleMenu"
+    />
     <MobileMenu
       :class="$style.mobileMenu"
       v-if="isMenuShow"

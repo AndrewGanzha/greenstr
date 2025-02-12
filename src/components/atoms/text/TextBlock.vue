@@ -45,7 +45,7 @@
 
 <style module lang="scss">
 .TextBlock {
-  border-radius: 1.2rem;
+  border-radius: 0 1.2rem 1.2rem 1.2rem;
   padding: 2rem;
   font-size: 2rem;
   font-weight: 200;

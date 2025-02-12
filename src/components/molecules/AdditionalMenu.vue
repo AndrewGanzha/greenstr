@@ -10,6 +10,7 @@ import ModalReductor from "./ModalReductor.vue";
 
 const modalReductors = ref<any>([]);
 const router = useRouter();
+const emits = defineEmits(["closeMenu"]);
 // #endregion
 
 // #region Methods
@@ -31,12 +32,18 @@ function goToReductor(type: string = "", hasCloseAction: boolean = false) {
     router.push({ name: "reductor", params: { type: type } });
   }
 
+  emits("closeMenu");
+
   if (hasCloseAction) {
     resetModalReductors();
   }
 }
 
 function resetModalReductors() {
+  modalReductors.value = [];
+}
+
+function setModalCloseOpen() {
   modalReductors.value = [];
 }
 // #endregion
@@ -104,6 +111,7 @@ function resetModalReductors() {
 
   <ModalReductor
     @reset-modal-reductors="resetModalReductors"
+    @set-modal-close-open="setModalCloseOpen"
     :modal-reductors="modalReductors"
   />
 </template>
