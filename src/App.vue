@@ -38,6 +38,7 @@ import SearchBar from "./components/organism/SearchBar.vue";
 
 .upRectangle {
   position: absolute;
+  padding-top: 20px;
   top: 0;
   left: 0;
 }
