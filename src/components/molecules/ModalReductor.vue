@@ -24,6 +24,8 @@ function goToReductor(type: string = "", hasCloseAction: boolean = false) {
   if (hasCloseAction) {
     emits("resetModalReductors");
   }
+
+  emits("closeMenu");
 }
 
 function getImage(type: string) {
@@ -40,7 +42,11 @@ function getImage(type: string) {
   ).href;
 }
 
-const emits = defineEmits(["resetModalReductors", "setModalCloseOpen"]);
+const emits = defineEmits([
+  "resetModalReductors",
+  "setModalCloseOpen",
+  "closeMenu",
+]);
 </script>
 
 <template>

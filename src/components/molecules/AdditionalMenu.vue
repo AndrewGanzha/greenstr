@@ -110,6 +110,7 @@ function setModalCloseOpen() {
   </div>
 
   <ModalReductor
+    @closeMenu="emits('closeMenu')"
     @reset-modal-reductors="resetModalReductors"
     @set-modal-close-open="setModalCloseOpen"
     :modal-reductors="modalReductors"
