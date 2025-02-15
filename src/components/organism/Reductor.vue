@@ -91,9 +91,7 @@ watch(
     <p :class="$style.title">{{ reductorType.title }}</p>
 
     <div :class="$style.menu">
-      <PreviewImage
-        :img-path="`/reductors/${$route.params.type}/preview.svg`"
-      />
+      <PreviewImage :img-path="`/reductors/${$route.params.type}/show/`" />
 
       <div :class="$style.menuDescription">
         <div>
