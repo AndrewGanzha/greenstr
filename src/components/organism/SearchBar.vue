@@ -33,23 +33,24 @@ function goToCatalog(type: string[] | string) {
 <template>
   <div :class="$style.searchBar">
     <div :class="$style.dropdown">
-      <span>Основные категории</span>
-      <div :class="$style.dropdownItems">
-        <span
-          :class="$style.title"
-          @click="goToCatalog(['gr', 'gs', 'gk', 'gf'])"
-        >
-          Цилиндрические мотор-редукторы серии G</span
-        >
-
-        <span
-          :class="$style.title"
-          @click="goToCatalog(['kzb', 'ksp', 'khz', 'ihd', 'fjx', 'hw', 'kcp'])"
-          >Насосы</span
-        >
-        <span :class="$style.title" @click="goToCatalog(['shutter', 'ball'])"
-          >Запорная арматура</span
-        >
+      <span :class="$style.dropdownTitle">Основные категории</span>
+      <div :class="$style.dropdownContent">
+        <div :class="$style.category">
+          <span @click="goToCatalog(['gr', 'gs', 'gk', 'gf'])">Редукторы</span>
+        </div>
+        <div :class="$style.category">
+          <span
+            @click="
+              goToCatalog(['kzb', 'ksp', 'khz', 'ihd', 'fjx', 'hw', 'kcp'])
+            "
+            >Насосы</span
+          >
+        </div>
+        <div :class="$style.category">
+          <span @click="goToCatalog(['shutter', 'ball'])"
+            >Запорная арматура</span
+          >
+        </div>
       </div>
     </div>
     <div :class="$style.search">
@@ -75,94 +76,72 @@ function goToCatalog(type: string[] | string) {
   align-items: center;
   position: relative;
   z-index: 2;
-  padding: 1rem 6rem;
-  height: 100%;
+  max-height: 3.6rem;
+  padding: 0.4rem 2rem;
   height: 100%;
   background-color: var(--black-gray);
 }
 
-.dropdownItems {
-  display: none;
+.dropdown {
   cursor: pointer;
-  padding: 1rem;
-  width: fit-content;
-  font-size: 1.4rem;
-  gap: 2rem;
-  flex-direction: column;
-  color: var(--black-gray);
-  background-color: var(--white);
+  color: var(--white);
+  font-size: 2.4rem;
+  position: relative;
+  width: 30rem;
+
+  &:hover .dropdownContent {
+    display: block;
+  }
 }
 
-.modal {
-  width: 100%;
-  height: 100%;
+.dropdownContent {
+  font-size: 2.4rem;
+  display: none;
   position: absolute;
-  z-index: 3;
-  align-content: center;
+  padding-bottom: 2rem;
+  background-color: var(--white);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
 
-  &:before {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--dark-gray);
-    opacity: 0.4;
+.dropdownTitle {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.category {
+  color: var(--black-gray);
+  font-weight: 600;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--black-gray);
+  margin: 1rem;
+
+  &:hover {
+    background-color: var(--light-gray);
   }
+}
 
-  .reductors {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-    width: fit-content;
-    margin: 0 auto;
-    justify-content: center;
+.subcategories {
+  display: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
 
-    .reductorsItems {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .modalReductor {
-      display: flex;
-      flex-direction: column;
-      background: var(--white);
-      max-width: 40rem;
-      max-height: 30rem;
-      padding: 2rem;
-      justify-content: center;
-      cursor: pointer;
-
-      img {
-        height: 20rem;
-      }
-    }
-
-    .modalReductorTitle {
-      text-align: center;
-    }
-
-    .closeIcon {
-      cursor: pointer;
-      align-self: flex-end;
-    }
-  }
+.category:hover .subcategories {
+  display: block;
 }
 
 .search {
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
+  align-items: center;
   padding: 1rem;
-  gap: 1rem;
   cursor: pointer;
   border: none;
-  width: 50%;
-  height: fit-content;
+  width: 49rem;
+  height: 1.6rem;
   outline: none;
   background-color: var(--white);
   font-size: 1.8rem;
@@ -184,18 +163,8 @@ function goToCatalog(type: string[] | string) {
   }
 }
 
-.dropdown {
-  cursor: pointer;
-  color: var(--white);
-  font-size: 2.4rem;
-
-  &:hover {
-    .dropdownItems {
-      display: flex;
-    }
-  }
-
-  @include respond-to(tablet) {
+@include respond-to(tablet) {
+  .dropdown {
     display: none;
   }
 }

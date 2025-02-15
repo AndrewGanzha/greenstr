@@ -53,8 +53,8 @@ const emits = defineEmits([
   <div :class="$style.modal" v-if="modalReductors.length > 0">
     <div :class="$style.reductors">
       <span :class="$style.closeIcon" @click="$emit('setModalCloseOpen')"
-        >❌</span
-      >
+        ><img src="/icons/close.svg"
+      /></span>
 
       <div :class="$style.reductorsItems">
         <div

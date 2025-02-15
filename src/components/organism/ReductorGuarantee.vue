@@ -5,7 +5,9 @@ const emit = defineEmits(["changeCategory"]);
 <template>
   <div :class="$style.guarantee">
     <div :class="$style.guaranteeWindow">
-      <span :class="$style.closeIcon" @click="emit('changeCategory')">❌</span>
+      <span :class="$style.closeIcon" @click="emit('changeCategory')"
+        ><img src="/icons/close.svg"
+      /></span>
 
       <div :class="$style.text">
         <p :class="$style.title">Гарантия</p>
