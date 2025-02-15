@@ -33,7 +33,10 @@ function goToCatalog(type: string[] | string) {
 <template>
   <div :class="$style.searchBar">
     <div :class="$style.dropdown">
-      <span :class="$style.dropdownTitle">Основные категории</span>
+      <span :class="$style.dropdownTitle"
+        >Основные категории
+        <img src="/icons/dropdown.svg" :class="$style.dropdownIcon"
+      /></span>
       <div :class="$style.dropdownContent">
         <div :class="$style.category">
           <span @click="goToCatalog(['gr', 'gs', 'gk', 'gf'])">Редукторы</span>
@@ -98,6 +101,7 @@ function goToCatalog(type: string[] | string) {
   font-size: 2.4rem;
   display: none;
   position: absolute;
+  border-radius: 0 0 1rem 1rem;
   padding-bottom: 2rem;
   background-color: var(--white);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -109,6 +113,10 @@ function goToCatalog(type: string[] | string) {
 .dropdownTitle {
   font-size: 2.4rem;
   font-weight: 600;
+}
+
+.dropdownIcon {
+  padding-left: 0.4rem;
 }
 
 .category {
@@ -140,17 +148,22 @@ function goToCatalog(type: string[] | string) {
   padding: 1rem;
   cursor: pointer;
   border: none;
-  width: 49rem;
+  width: 43rem;
   height: 1.6rem;
   outline: none;
-  background-color: var(--white);
   font-size: 1.8rem;
   border-radius: 2.4rem;
 
+  background: linear-gradient(to right, var(--white) calc(100% - 9%), red 0);
+
   input {
     padding: 0 2rem;
-    width: 100%;
+    width: 50%;
     border: none;
+
+    &::placeholder {
+      font-size: 1.6rem;
+    }
   }
 
   .searchIcon {
