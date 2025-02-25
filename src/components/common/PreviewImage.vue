@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import * as path from "node:path";
+import { ref } from "vue";
 
 interface IProps {
   imgPath: string;
