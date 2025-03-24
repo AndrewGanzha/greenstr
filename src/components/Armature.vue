@@ -44,7 +44,7 @@ const shutterType = ref<any>(
 
 // #region Lifecycle
 onMounted(() => {
-  imgPath.value = `/armature/${$route.params.type}/preview.svg`;
+  imgPath.value = `/armature/${$route.params.type}/show/`;
 });
 // #endregion
 
