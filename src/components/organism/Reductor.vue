@@ -136,125 +136,134 @@ watch(
       </div>
     </div>
 
-    <div v-if="activeCategory === 'description' && reductorType.description">
-      <TextBlock v-html="reductorType.description" />
-    </div>
+    <div>
+      <div
+        v-if="
+          (activeCategory === 'description' || activeCategory === 'garant') &&
+          reductorType.description
+        "
+      >
+        <TextBlock v-html="reductorType.description" />
+      </div>
 
-    <div v-if="activeCategory === 'about' && reductorType.type !== 'gx'">
-      <TextBlock>
-        <div v-if="reductorType.performanceOptions">
-          <h2 :class="$style.subtitle">Варианты исполнения</h2>
+      <div v-if="activeCategory === 'about' && reductorType.type !== 'gx'">
+        <TextBlock>
+          <div v-if="reductorType.performanceOptions">
+            <h2 :class="$style.subtitle">Варианты исполнения</h2>
 
-          <ul :class="$style.list">
-            <li
-              v-for="reductor in reductorType.performanceOptions"
-              :class="$style.performanceOptionsItem"
-            >
-              {{ reductor }}
-            </li>
-          </ul>
-        </div>
+            <ul :class="$style.list">
+              <li
+                v-for="reductor in reductorType.performanceOptions"
+                :class="$style.performanceOptionsItem"
+              >
+                {{ reductor }}
+              </li>
+            </ul>
+          </div>
 
-        <div v-if="reductorType.typeDesignation">
-          <h2 :class="$style.subtitle">Схема типового обозначения</h2>
+          <div v-if="reductorType.typeDesignation">
+            <h2 :class="$style.subtitle">Схема типового обозначения</h2>
 
-          <ul :class="$style.list">
-            <li
-              v-for="reductor in reductorType.typeDesignation"
-              :class="$style.performanceOptionsItem"
-            >
-              {{ reductor }}
-            </li>
-          </ul>
+            <ul :class="$style.list">
+              <li
+                v-for="reductor in reductorType.typeDesignation"
+                :class="$style.performanceOptionsItem"
+              >
+                {{ reductor }}
+              </li>
+            </ul>
 
-          <div v-if="reductorType.typeDesignationTables">
-            <div
-              v-for="(table, index) in reductorType.typeDesignationTables"
-              :key="`table-${index}`"
-            >
-              <table :class="$style.table">
-                <thead>
-                  <tr>
-                    <th
-                      v-for="(_, headerIndex) in table"
-                      :key="`header-${headerIndex}`"
-                    >
-                      {{ headerIndex }}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td
-                      v-for="(item, headerIndex) in table"
-                      :key="`header-${headerIndex}`"
-                    >
-                      {{ item }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div v-if="reductorType.typeDesignationTables">
+              <div
+                v-for="(table, index) in reductorType.typeDesignationTables"
+                :key="`table-${index}`"
+              >
+                <table :class="$style.table">
+                  <thead>
+                    <tr>
+                      <th
+                        v-for="(_, headerIndex) in table"
+                        :key="`header-${headerIndex}`"
+                      >
+                        {{ headerIndex }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        v-for="(item, headerIndex) in table"
+                        :key="`header-${headerIndex}`"
+                      >
+                        {{ item }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div v-if="reductorType.maxTorque">
-          <h2 :class="$style.subtitle">Максимальный крутящий момент</h2>
 
           <div v-if="reductorType.maxTorque">
-            <div
-              v-for="(table, index) in reductorType.maxTorque"
-              :key="`table-${index}`"
-            >
-              <table :class="$style.table">
-                <thead>
-                  <tr>
-                    <th
-                      v-for="(_, headerIndex) in table"
-                      :key="`header-${headerIndex}`"
-                    >
-                      {{ headerIndex }}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td
-                      v-for="(item, headerIndex) in table"
-                      :key="`header-${headerIndex}`"
-                    >
-                      {{ item }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <h2 :class="$style.subtitle">Максимальный крутящий момент</h2>
+
+            <div v-if="reductorType.maxTorque">
+              <div
+                v-for="(table, index) in reductorType.maxTorque"
+                :key="`table-${index}`"
+              >
+                <table :class="$style.table">
+                  <thead>
+                    <tr>
+                      <th
+                        v-for="(_, headerIndex) in table"
+                        :key="`header-${headerIndex}`"
+                      >
+                        {{ headerIndex }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        v-for="(item, headerIndex) in table"
+                        :key="`header-${headerIndex}`"
+                      >
+                        {{ item }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div v-if="reductorType.mountingPosition">
-          <ReductorMountingPosition
-            :mountings="reductorType.mountingPosition"
-          />
-        </div>
-      </TextBlock>
+          <div v-if="reductorType.mountingPosition">
+            <ReductorMountingPosition
+              :mountings="reductorType.mountingPosition"
+            />
+          </div>
+        </TextBlock>
+      </div>
+
+      <div v-else-if="reductorType.type === 'gx'">
+        <ReductorGX
+          :reductor="reductorType"
+          :active-category="activeCategory"
+        />
+      </div>
     </div>
 
-    <div v-else>
-      <ReductorGX :reductor="reductorType" :active-category="activeCategory" />
-    </div>
+    <ReductorGuarantee
+      v-if="activeCategory === 'garant'"
+      @change-category="changeCategory"
+    />
   </div>
-
-  <ReductorGuarantee
-    v-if="activeCategory === 'garant'"
-    @change-category="changeCategory"
-  />
 </template>
 
 <style module lang="scss">
 .Reductor {
   max-width: 100rem;
-  width: fit-content;
   margin: 0 auto;
 
   @include respond-to(tablet) {
@@ -295,7 +304,6 @@ watch(
 }
 
 .subtitle {
-  width: fit-content;
   margin: 0 auto;
   text-align: center;
   font-weight: 300;
@@ -304,7 +312,6 @@ watch(
 }
 
 .subtitlePerfomance {
-  width: fit-content;
   margin: 0 auto;
   text-align: center;
   font-weight: 500;
